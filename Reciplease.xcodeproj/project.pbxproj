@@ -9,12 +9,19 @@
 /* Begin PBXBuildFile section */
 		C69236DB24A0AE6E00B11A98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69236DA24A0AE6E00B11A98 /* AppDelegate.swift */; };
 		C69236DD24A0AE6E00B11A98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69236DC24A0AE6E00B11A98 /* SceneDelegate.swift */; };
-		C69236DF24A0AE6E00B11A98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69236DE24A0AE6E00B11A98 /* ViewController.swift */; };
 		C69236E224A0AE6E00B11A98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69236E024A0AE6E00B11A98 /* Main.storyboard */; };
 		C69236E424A0AE6F00B11A98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69236E324A0AE6F00B11A98 /* Assets.xcassets */; };
 		C69236E724A0AE6F00B11A98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69236E524A0AE6F00B11A98 /* LaunchScreen.storyboard */; };
 		C69236F224A0AE7000B11A98 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69236F124A0AE7000B11A98 /* RecipleaseTests.swift */; };
 		C69236FD24A0AE7000B11A98 /* RecipleaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69236FC24A0AE7000B11A98 /* RecipleaseUITests.swift */; };
+		C692370E24A0CF8300B11A98 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692370D24A0CF8300B11A98 /* SearchViewController.swift */; };
+		C692371024A0CF8D00B11A98 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692370F24A0CF8D00B11A98 /* FavoriteViewController.swift */; };
+		C692371224A0D0D500B11A98 /* RecipListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692371124A0D0D500B11A98 /* RecipListViewController.swift */; };
+		C692371424A0D20A00B11A98 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692371324A0D20A00B11A98 /* DetailsViewController.swift */; };
+		C692371624A0D21700B11A98 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692371524A0D21700B11A98 /* InstructionsViewController.swift */; };
+		C6D4440C24A26DC3008DBEA4 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4440B24A26DC3008DBEA4 /* CustomButton.swift */; };
+		C6D4440E24A26F22008DBEA4 /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4440D24A26F22008DBEA4 /* ListService.swift */; };
+		C6D4441024A26F61008DBEA4 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4440F24A26F61008DBEA4 /* Ingredients.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +45,6 @@
 		C69236D724A0AE6E00B11A98 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69236DA24A0AE6E00B11A98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C69236DC24A0AE6E00B11A98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C69236DE24A0AE6E00B11A98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C69236E124A0AE6E00B11A98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C69236E324A0AE6F00B11A98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C69236E624A0AE6F00B11A98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +55,14 @@
 		C69236F824A0AE7000B11A98 /* RecipleaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69236FC24A0AE7000B11A98 /* RecipleaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseUITests.swift; sourceTree = "<group>"; };
 		C69236FE24A0AE7000B11A98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C692370D24A0CF8300B11A98 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C692370F24A0CF8D00B11A98 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		C692371124A0D0D500B11A98 /* RecipListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipListViewController.swift; sourceTree = "<group>"; };
+		C692371324A0D20A00B11A98 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		C692371524A0D21700B11A98 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		C6D4440B24A26DC3008DBEA4 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		C6D4440D24A26F22008DBEA4 /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
+		C6D4440F24A26F61008DBEA4 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +113,11 @@
 		C69236D924A0AE6E00B11A98 /* Reciplease */ = {
 			isa = PBXGroup;
 			children = (
+				C692370C24A0CF6800B11A98 /* Model */,
+				C692370B24A0CF6400B11A98 /* View */,
+				C692370A24A0CF5B00B11A98 /* Controller */,
 				C69236DA24A0AE6E00B11A98 /* AppDelegate.swift */,
 				C69236DC24A0AE6E00B11A98 /* SceneDelegate.swift */,
-				C69236DE24A0AE6E00B11A98 /* ViewController.swift */,
-				C69236E024A0AE6E00B11A98 /* Main.storyboard */,
 				C69236E324A0AE6F00B11A98 /* Assets.xcassets */,
 				C69236E524A0AE6F00B11A98 /* LaunchScreen.storyboard */,
 				C69236E824A0AE6F00B11A98 /* Info.plist */,
@@ -126,6 +141,36 @@
 				C69236FE24A0AE7000B11A98 /* Info.plist */,
 			);
 			path = RecipleaseUITests;
+			sourceTree = "<group>";
+		};
+		C692370A24A0CF5B00B11A98 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C692370D24A0CF8300B11A98 /* SearchViewController.swift */,
+				C692370F24A0CF8D00B11A98 /* FavoriteViewController.swift */,
+				C692371124A0D0D500B11A98 /* RecipListViewController.swift */,
+				C692371324A0D20A00B11A98 /* DetailsViewController.swift */,
+				C692371524A0D21700B11A98 /* InstructionsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C692370B24A0CF6400B11A98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C69236E024A0AE6E00B11A98 /* Main.storyboard */,
+				C6D4440B24A26DC3008DBEA4 /* CustomButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C692370C24A0CF6800B11A98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C6D4440D24A26F22008DBEA4 /* ListService.swift */,
+				C6D4440F24A26F61008DBEA4 /* Ingredients.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +304,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C69236DF24A0AE6E00B11A98 /* ViewController.swift in Sources */,
+				C6D4440E24A26F22008DBEA4 /* ListService.swift in Sources */,
+				C692370E24A0CF8300B11A98 /* SearchViewController.swift in Sources */,
 				C69236DB24A0AE6E00B11A98 /* AppDelegate.swift in Sources */,
+				C692371224A0D0D500B11A98 /* RecipListViewController.swift in Sources */,
+				C692371024A0CF8D00B11A98 /* FavoriteViewController.swift in Sources */,
+				C6D4440C24A26DC3008DBEA4 /* CustomButton.swift in Sources */,
 				C69236DD24A0AE6E00B11A98 /* SceneDelegate.swift in Sources */,
+				C692371624A0D21700B11A98 /* InstructionsViewController.swift in Sources */,
+				C6D4441024A26F61008DBEA4 /* Ingredients.swift in Sources */,
+				C692371424A0D20A00B11A98 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
