@@ -21,7 +21,6 @@
 		C692371624A0D21700B11A98 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692371524A0D21700B11A98 /* InstructionsViewController.swift */; };
 		C6D4440C24A26DC3008DBEA4 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4440B24A26DC3008DBEA4 /* CustomButton.swift */; };
 		C6D4440E24A26F22008DBEA4 /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4440D24A26F22008DBEA4 /* ListService.swift */; };
-		C6D4441024A26F61008DBEA4 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4440F24A26F61008DBEA4 /* Ingredients.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +61,6 @@
 		C692371524A0D21700B11A98 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		C6D4440B24A26DC3008DBEA4 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C6D4440D24A26F22008DBEA4 /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
-		C6D4440F24A26F61008DBEA4 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				C6D4440D24A26F22008DBEA4 /* ListService.swift */,
-				C6D4440F24A26F61008DBEA4 /* Ingredients.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,7 +309,6 @@
 				C6D4440C24A26DC3008DBEA4 /* CustomButton.swift in Sources */,
 				C69236DD24A0AE6E00B11A98 /* SceneDelegate.swift in Sources */,
 				C692371624A0D21700B11A98 /* InstructionsViewController.swift in Sources */,
-				C6D4441024A26F61008DBEA4 /* Ingredients.swift in Sources */,
 				C692371424A0D20A00B11A98 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

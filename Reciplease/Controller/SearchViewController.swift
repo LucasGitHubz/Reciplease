@@ -16,9 +16,7 @@ class SearchViewController: UIViewController {
         guard let ingredient = textField.text else {
                 return
         }
-
-        let ingredientName = Ingredients(name: ingredient)
-        ListService.shared.add(ingredient: ingredientName)
+        ListService.ingredients.append(ingredient)
         tableView.reloadData()
     }
 
@@ -35,14 +33,14 @@ extension SearchViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ListService.shared.ingredients.count
+        return ListService.ingredients.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath)
 
-        let ingredient = ListService.shared.ingredients[indexPath.row]
-        cell.textLabel?.text = ingredient.name
+        let ingredient = ListService.ingredients[indexPath.row]
+        cell.textLabel?.text = ingredient
 
         return cell
     }

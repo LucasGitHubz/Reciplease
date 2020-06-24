@@ -11,10 +11,14 @@ import Foundation
 class ListService {
     static var shared = ListService()
     private init() {}
-    
-    private(set) var ingredients = [Ingredients]()
-    
-    func add(ingredient: Ingredients) {
-        ingredients.append(ingredient)
+
+    static var ingredients: [String] {
+        get {
+            return UserDefaults.standard.object(forKey: "ingredient") as? [String] ?? []
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "ingredient")
+            print("ingredientTab \(ingredients)")
+        }
     }
 }
