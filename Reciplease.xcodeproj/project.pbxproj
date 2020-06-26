@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C60FEE7024A5FF9B00581FDA /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60FEE6F24A5FF9B00581FDA /* CustomTabBar.swift */; };
+		C60FEE7224A6327600581FDA /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60FEE7124A6327600581FDA /* CustomNavigationBar.swift */; };
 		C69236DB24A0AE6E00B11A98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69236DA24A0AE6E00B11A98 /* AppDelegate.swift */; };
 		C69236DD24A0AE6E00B11A98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69236DC24A0AE6E00B11A98 /* SceneDelegate.swift */; };
 		C69236E224A0AE6E00B11A98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69236E024A0AE6E00B11A98 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C60FEE6F24A5FF9B00581FDA /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		C60FEE7124A6327600581FDA /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		C69236D724A0AE6E00B11A98 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69236DA24A0AE6E00B11A98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C69236DC24A0AE6E00B11A98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				C6D4440B24A26DC3008DBEA4 /* CustomButton.swift */,
 				C6F4FB7B24A5F6DD00891C6D /* CustomTextField.swift */,
 				C6F4FB7924A5EF2500891C6D /* ListTableViewCell.swift */,
+				C60FEE6F24A5FF9B00581FDA /* CustomTabBar.swift */,
+				C60FEE7124A6327600581FDA /* CustomNavigationBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -342,8 +348,10 @@
 				C6D4440E24A26F22008DBEA4 /* ListService.swift in Sources */,
 				C6F4FB7C24A5F6DD00891C6D /* CustomTextField.swift in Sources */,
 				C692370E24A0CF8300B11A98 /* SearchViewController.swift in Sources */,
+				C60FEE7024A5FF9B00581FDA /* CustomTabBar.swift in Sources */,
 				C69236DB24A0AE6E00B11A98 /* AppDelegate.swift in Sources */,
 				C692371224A0D0D500B11A98 /* RecipListViewController.swift in Sources */,
+				C60FEE7224A6327600581FDA /* CustomNavigationBar.swift in Sources */,
 				C692371024A0CF8D00B11A98 /* FavoriteViewController.swift in Sources */,
 				C6D4440C24A26DC3008DBEA4 /* CustomButton.swift in Sources */,
 				C69236DD24A0AE6E00B11A98 /* SceneDelegate.swift in Sources */,
