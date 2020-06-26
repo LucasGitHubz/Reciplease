@@ -1,0 +1,11 @@
+line_length: 300
+disabled_rules:
+- function_body_length
+- type_body_length
+- file_length
+- redundant_string_enum_value
+- trailing_whitespace
+- redundant_optional_initialization
+- force_try
+- closure_parameter_position
+- unused_optional_binding
