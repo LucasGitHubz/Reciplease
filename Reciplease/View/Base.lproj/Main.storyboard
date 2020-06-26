@@ -69,8 +69,9 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Lemon, Cheese, Sausages..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5x-gT-C03">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Lemon, Cheese, Sausages..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="J5x-gT-C03" customClass="CustomTextField" customModule="Reciplease" customModuleProvider="target">
                                         <rect key="frame" x="10" y="82" width="304" height="57"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="J5x-gT-C03" secondAttribute="height" multiplier="101:19" id="Ilo-Pc-nrq"/>
                                         </constraints>
@@ -147,13 +148,46 @@
                                 <rect key="frame" x="21" y="246" width="344" height="371.5"/>
                                 <color key="backgroundColor" red="0.20779976250000001" green="0.20000272990000001" blue="0.2000019848" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientCell" id="R6j-6h-KgE">
-                                        <rect key="frame" x="0.0" y="28" width="344" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientCell" rowHeight="84" id="R6j-6h-KgE" customClass="ListTableViewCell" customModule="Reciplease" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="344" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R6j-6h-KgE" id="LI3-r0-ZeG">
-                                            <rect key="frame" x="0.0" y="0.0" width="344" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="344" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jM-pd-4vA">
+                                                    <rect key="frame" x="20" y="11" width="23" height="62"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="0jM-pd-4vA" secondAttribute="height" multiplier="23:62" id="8bf-aL-6EI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banane" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvv-I4-gec">
+                                                    <rect key="frame" x="48" y="11" width="243" height="62"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="fvv-I4-gec" secondAttribute="height" multiplier="243:62" id="rQ1-26-7Q2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fvv-I4-gec" secondAttribute="trailing" constant="20" symbolic="YES" id="Drb-Nw-qfu"/>
+                                                <constraint firstItem="0jM-pd-4vA" firstAttribute="top" secondItem="LI3-r0-ZeG" secondAttribute="topMargin" id="OMU-09-wSd"/>
+                                                <constraint firstItem="fvv-I4-gec" firstAttribute="top" secondItem="LI3-r0-ZeG" secondAttribute="topMargin" id="RDK-V0-EyA"/>
+                                                <constraint firstItem="fvv-I4-gec" firstAttribute="bottom" secondItem="LI3-r0-ZeG" secondAttribute="bottomMargin" id="eHB-dA-wbN"/>
+                                                <constraint firstItem="0jM-pd-4vA" firstAttribute="leading" secondItem="LI3-r0-ZeG" secondAttribute="leadingMargin" id="eph-8R-bpt"/>
+                                                <constraint firstItem="fvv-I4-gec" firstAttribute="leading" secondItem="0jM-pd-4vA" secondAttribute="trailing" constant="5" id="leC-JR-F4W"/>
+                                                <constraint firstItem="0jM-pd-4vA" firstAttribute="bottom" secondItem="LI3-r0-ZeG" secondAttribute="bottomMargin" id="ley-fK-Zgt"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.20779976250000001" green="0.20000272990000001" blue="0.2000019848" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="ingredientLabel" destination="fvv-I4-gec" id="tjK-df-e7n"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -190,7 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQV-gF-Mep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663.125" y="-363.38028169014086"/>
+            <point key="canvasLocation" x="1662.3188405797102" y="-363.61607142857139"/>
         </scene>
         <!--Reciplease-->
         <scene sceneID="62F-BU-X0g">

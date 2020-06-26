@@ -12,6 +12,10 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
 
+    private func addIngredientToList() {
+        
+    }
+
     @IBAction func didTapAddButton(_ sender: Any) {
         guard let ingredient = textField.text else {
                 return
@@ -21,6 +25,8 @@ class SearchViewController: UIViewController {
     }
 
     @IBAction func didTapClearButton(_ sender: Any) {
+        ListService.ingredients.removeAll()
+        tableView.reloadData()
     }
 
     @IBAction func didTapSearchButton(_ sender: Any) {
@@ -37,10 +43,11 @@ extension SearchViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath)
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath) as? ListTableViewCell else {
+            return UITableViewCell()
+        }
         let ingredient = ListService.ingredients[indexPath.row]
-        cell.textLabel?.text = ingredient
+        cell.ingredientLabel.text = ingredient
 
         return cell
     }

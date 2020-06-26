@@ -21,6 +21,8 @@
 		C692371624A0D21700B11A98 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692371524A0D21700B11A98 /* InstructionsViewController.swift */; };
 		C6D4440C24A26DC3008DBEA4 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4440B24A26DC3008DBEA4 /* CustomButton.swift */; };
 		C6D4440E24A26F22008DBEA4 /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4440D24A26F22008DBEA4 /* ListService.swift */; };
+		C6F4FB7A24A5EF2500891C6D /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F4FB7924A5EF2500891C6D /* ListTableViewCell.swift */; };
+		C6F4FB7C24A5F6DD00891C6D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F4FB7B24A5F6DD00891C6D /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		C692371524A0D21700B11A98 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		C6D4440B24A26DC3008DBEA4 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C6D4440D24A26F22008DBEA4 /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
+		C6F4FB7924A5EF2500891C6D /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		C6F4FB7B24A5F6DD00891C6D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,8 @@
 			children = (
 				C69236E024A0AE6E00B11A98 /* Main.storyboard */,
 				C6D4440B24A26DC3008DBEA4 /* CustomButton.swift */,
+				C6F4FB7B24A5F6DD00891C6D /* CustomTextField.swift */,
+				C6F4FB7924A5EF2500891C6D /* ListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +186,7 @@
 				C69236D324A0AE6E00B11A98 /* Sources */,
 				C69236D424A0AE6E00B11A98 /* Frameworks */,
 				C69236D524A0AE6E00B11A98 /* Resources */,
+				C6F4FB7D24A5F9C800891C6D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -296,12 +303,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C6F4FB7D24A5F9C800891C6D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C69236D324A0AE6E00B11A98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C6D4440E24A26F22008DBEA4 /* ListService.swift in Sources */,
+				C6F4FB7C24A5F6DD00891C6D /* CustomTextField.swift in Sources */,
 				C692370E24A0CF8300B11A98 /* SearchViewController.swift in Sources */,
 				C69236DB24A0AE6E00B11A98 /* AppDelegate.swift in Sources */,
 				C692371224A0D0D500B11A98 /* RecipListViewController.swift in Sources */,
@@ -310,6 +339,7 @@
 				C69236DD24A0AE6E00B11A98 /* SceneDelegate.swift in Sources */,
 				C692371624A0D21700B11A98 /* InstructionsViewController.swift in Sources */,
 				C692371424A0D20A00B11A98 /* DetailsViewController.swift in Sources */,
+				C6F4FB7A24A5EF2500891C6D /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
