@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oDx-pe-tJ1">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -36,7 +36,7 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-10"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="1F0-wi-f7L" customClass="CustomNavigationBar" customModule="Reciplease" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.20779976250000001" green="0.20000272990000001" blue="0.2000019848" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -60,7 +60,7 @@
             <objects>
                 <viewController id="UTD-Oj-1Dk" customClass="SearchViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YFo-J3-fYA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNe-g9-zSv">
@@ -85,7 +85,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aM3-9c-QXc" customClass="CustomButton" customModule="Reciplease" customModuleProvider="target">
-                                        <rect key="frame" x="316" y="82" width="93.333333333333314" height="57"/>
+                                        <rect key="frame" x="316" y="82" width="93.5" height="57"/>
                                         <color key="backgroundColor" red="0.3453444839" green="0.57826501129999996" blue="0.38821062449999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="aM3-9c-QXc" secondAttribute="height" multiplier="31:19" id="n2W-ud-yT7"/>
@@ -114,7 +114,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your ingredients :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXN-C5-X1m">
-                                <rect key="frame" x="10" y="184" width="231.66666666666666" height="54"/>
+                                <rect key="frame" x="10" y="184" width="231.5" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EXN-C5-X1m" secondAttribute="height" multiplier="312:73" id="mKQ-nD-oa8"/>
                                 </constraints>
@@ -137,7 +137,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQv-qA-9ky" customClass="CustomButton" customModule="Reciplease" customModuleProvider="target">
-                                <rect key="frame" x="30" y="543.33333333333337" width="354" height="89.666666666666629"/>
+                                <rect key="frame" x="30" y="625.5" width="354" height="89.5"/>
                                 <color key="backgroundColor" red="0.3453444839" green="0.57826501129999996" blue="0.38821062449999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bQv-qA-9ky" secondAttribute="height" multiplier="315:89" constant="37.022471910112358" id="909-ii-Wlf"/>
@@ -151,7 +151,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pv5-Xc-khG">
-                                <rect key="frame" x="21" y="245.99999999999997" width="344" height="289.33333333333326"/>
+                                <rect key="frame" x="21" y="246" width="344" height="371.5"/>
                                 <color key="backgroundColor" red="0.20779976250000001" green="0.20000272990000001" blue="0.2000019848" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientCell" rowHeight="84" id="R6j-6h-KgE" customClass="ListTableViewCell" customModule="Reciplease" customModuleProvider="target">
@@ -229,7 +229,7 @@
                     <connections>
                         <outlet property="tableView" destination="pv5-Xc-khG" id="2V2-YA-XTV"/>
                         <outlet property="textField" destination="J5x-gT-C03" id="8cD-wd-bmv"/>
-                        <segue destination="775-WH-Ljv" kind="show" id="csU-yy-JcY"/>
+                        <segue destination="775-WH-Ljv" kind="show" identifier="segueToListVC" id="csU-yy-JcY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQV-gF-Mep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -246,9 +246,34 @@
             <objects>
                 <viewController id="775-WH-Ljv" customClass="RecipListViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SLZ-PA-ZtP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CrO-zh-kaC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" id="Im4-HE-g5M">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Im4-HE-g5M" id="P6c-Y7-cvc">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="775-WH-Ljv" id="d6T-Tx-ZQu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CrO-zh-kaC" firstAttribute="leading" secondItem="gxL-Ow-Unw" secondAttribute="leading" id="0Vs-Io-oAo"/>
+                            <constraint firstItem="CrO-zh-kaC" firstAttribute="bottom" secondItem="gxL-Ow-Unw" secondAttribute="bottom" id="P2a-c2-IVE"/>
+                            <constraint firstItem="CrO-zh-kaC" firstAttribute="top" secondItem="gxL-Ow-Unw" secondAttribute="top" id="lJr-r1-Hdn"/>
+                            <constraint firstItem="CrO-zh-kaC" firstAttribute="trailing" secondItem="gxL-Ow-Unw" secondAttribute="trailing" id="ucV-MP-JXi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gxL-Ow-Unw"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reciplease" id="AAw-GK-T5U"/>
@@ -258,14 +283,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shU-GE-fnk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2458" y="-362"/>
+            <point key="canvasLocation" x="2457.971014492754" y="-362.77173913043481"/>
         </scene>
         <!--Reciplease-->
         <scene sceneID="eeK-tE-0fk">
             <objects>
                 <viewController id="vfj-gF-W9A" customClass="DetailsViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oqC-gh-ni5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="8J1-9f-dWm"/>
@@ -284,7 +309,7 @@
             <objects>
                 <viewController id="rdd-3p-25R" customClass="InstructionsViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JUM-iB-FUn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="GEz-8e-Hkd"/>
@@ -303,7 +328,7 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-10"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="lCd-5B-Ctg" customClass="CustomNavigationBar" customModule="Reciplease" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.20779976250000001" green="0.20000272990000001" blue="0.2000019848" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -327,7 +352,7 @@
             <objects>
                 <viewController id="noP-g7-eI6" customClass="FavoriteViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vmb-cY-WxI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="JQh-dL-S5U"/>

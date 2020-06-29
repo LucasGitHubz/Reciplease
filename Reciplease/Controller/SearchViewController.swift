@@ -33,6 +33,7 @@ class SearchViewController: UIViewController {
     }
 
     @IBAction func didTapSearchButton(_ sender: Any) {
+        performSegue(withIdentifier: "segueToListVC", sender: self)
     }
 }
 
