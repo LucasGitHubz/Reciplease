@@ -9,3 +9,4 @@ disabled_rules:
 - force_try
 - closure_parameter_position
 - unused_optional_binding
+- identifier_name

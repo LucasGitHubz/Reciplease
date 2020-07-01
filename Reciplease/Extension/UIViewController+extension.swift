@@ -12,6 +12,7 @@ extension UIViewController {
     struct AlertMessage {
         let programError = "L'application n'a pas pu récupérer les données nécessaires. Vérifiez que vous êtes bien connecté(e) à internet"
         let emptyTextFieldError = "Veuillez écrire le nom d'un ingrédient avant d'ajouter à la liste."
+        let emptyListError = "Veuillez renseigner vos ingrédients avant de lancer une recherche."
     }
 
     func presentAlert(message: String) {
