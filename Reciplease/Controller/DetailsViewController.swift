@@ -9,4 +9,9 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
+    var nameTab = [String?]()
+    var ingredientTab = [[String]]()
+    var timeTab = [Double]()
+    var yieldTab = [Double]()
+    var imageTab = [String]()
 }

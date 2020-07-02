@@ -187,9 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				C692370D24A0CF8300B11A98 /* SearchViewController.swift */,
-				C692370F24A0CF8D00B11A98 /* FavoriteViewController.swift */,
 				C692371124A0D0D500B11A98 /* RecipListViewController.swift */,
 				C692371324A0D20A00B11A98 /* DetailsViewController.swift */,
+				C692370F24A0CF8D00B11A98 /* FavoriteViewController.swift */,
 				C692371524A0D21700B11A98 /* InstructionsViewController.swift */,
 			);
 			path = Controller;

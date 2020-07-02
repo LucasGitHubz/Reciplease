@@ -17,7 +17,26 @@ class RecipListViewController: UIViewController {
     var imageTab = [String]()
 }
 
+extension RecipListViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToDetailVC" {
+            guard let successVC = segue.destination as? RecipListViewController else {
+                return presentAlert(message: AlertMessage.init().programError)
+            }
+            successVC.nameTab = nameTab
+            successVC.ingredientTab = ingredientTab
+            successVC.timeTab = timeTab
+            successVC.yieldTab = yieldTab
+            successVC.imageTab = imageTab
+        }
+    }
+}
+
 extension RecipListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
