@@ -17,11 +17,11 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var botActivityIndicator: UIActivityIndicatorView!
     
     // MARK: Properties
-    private var nameTab = [String?]()
+    private var nameTab = [String]()
     private var ingredientTab = [[String]]()
     private var timeTab = [Double]()
     private var yieldTab = [Double]()
-    var imageTab = [String]()
+    private var imageTab = [String]()
 
     private func toogleActivityIndicator(idIndicator: Int, shown: Bool) {
         if idIndicator == 1 {
@@ -127,7 +127,7 @@ extension SearchViewController: UITableViewDataSource {
         }
         
         let ingredient = ListService.ingredients[indexPath.row]
-        cell.ingredientLabel.text = ingredient
+        cell.ingredientLabel.text = "- \(ingredient)"
         
         return cell
     }

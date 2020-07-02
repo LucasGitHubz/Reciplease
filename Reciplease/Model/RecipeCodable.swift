@@ -9,7 +9,7 @@
 import Foundation
 
 struct FinalRecipe {
-    var name: [String?]
+    var name: [String]
     var ingredient: [[String]]
     var time: [Double]
     var yield: [Double]
