@@ -11,8 +11,7 @@ import Foundation
 struct FinalRecipe {
     var name: [String?]
     var ingredient: [[String]]
-    var time: [Double?]
-    var yield: [Double?]
+    var time: [Double]
     var image: [String]
 }
 

@@ -9,15 +9,28 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+    @IBOutlet weak var addButton: CustomButton!
+    @IBOutlet weak var searchButton: CustomButton!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var midActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var botActivityIndicator: UIActivityIndicatorView!
+    
     // MARK: Properties
     private var nameTab = [String?]()
     private var ingredientTab = [[String]]()
-    private var yieldTab = [Double?]()
-    private var timeTab = [Double?]()
+    private var timeTab = [Double]()
     var imageTab = [String]()
+
+    private func toogleActivityIndicator(idIndicator: Int, shown: Bool) {
+        if idIndicator == 1 {
+            addButton.isHidden = !shown
+            midActivityIndicator.isHidden = shown
+        } else {
+            searchButton.isHidden = !shown
+            botActivityIndicator.isHidden = shown
+        }
+    }
 
     private func addIngredientToList() {
         guard let ingredient = textField.text, textField.text != "" else {
@@ -26,15 +39,18 @@ class SearchViewController: UIViewController {
         }
         ListService.ingredients.append(ingredient)
         tableView.reloadData()
+        textField.text = ""
     }
 
-    private func getRecipe() {
+    private func getRecipe(idIndicator: Int) {
+        toogleActivityIndicator(idIndicator: idIndicator, shown: false)
         guard ListService.ingredients != [] else {
             return presentAlert(message: AlertMessage.init().emptyListError)
         }
         let ingredients = ListService.ingredients.joined(separator: ",")
         RecipeService.shared.getTranslation(userIngredients: ingredients) { (success, completRecipe) in
             DispatchQueue.main.async {
+                self.toogleActivityIndicator(idIndicator: idIndicator, shown: true)
                 if success {
                     self.update(with: completRecipe, completionHandler: { (success) in
                         if success {
@@ -58,7 +74,6 @@ class SearchViewController: UIViewController {
 
         nameTab = recipesData.name
         ingredientTab = recipesData.ingredient
-        yieldTab = recipesData.yield
         timeTab = recipesData.time
         imageTab = recipesData.image
         completionHandler(true)
@@ -71,14 +86,15 @@ class SearchViewController: UIViewController {
             }
             successVC.nameTab = nameTab
             successVC.ingredientTab = ingredientTab
-            successVC.yieldTab = yieldTab
             successVC.timeTab = timeTab
             successVC.imageTab = imageTab
         }
     }
     
     @IBAction func didTapAddButton(_ sender: Any) {
+        toogleActivityIndicator(idIndicator: 1, shown: false)
         addIngredientToList()
+        toogleActivityIndicator(idIndicator: 1, shown: true)
         textField.resignFirstResponder()
     }
     
@@ -89,7 +105,7 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func didTapSearchButton(_ sender: Any) {
-        getRecipe()
+        getRecipe(idIndicator: 2)
     }
 }
 
