@@ -22,5 +22,9 @@ class CustomNavigationBar: UINavigationBar {
     func setDesign() {
         let attributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 20) as Any]
         UINavigationBar.appearance().titleTextAttributes = attributes
+            let barButton = UIBarButtonItem()
+            barButton.title = "back"
+            barButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 20) as Any], for: UIControl.State.normal)
+        self.topItem?.backBarButtonItem = barButton
     }
 }

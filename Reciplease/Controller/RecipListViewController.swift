@@ -9,6 +9,7 @@
 import UIKit
 
 class RecipListViewController: UIViewController {
+    @IBOutlet weak var navBar: UINavigationItem!
     // MARK: Properties
     var nameTab = [String]()
     var ingredientTab = [[String]]()
@@ -21,6 +22,10 @@ class RecipListViewController: UIViewController {
     private var time = String()
     private var yield = String()
     private var image = String()
+
+    override func viewDidLoad() {
+        navigationController?.navigationBar.setBackButtonTitle()
+    }
 }
 
 extension RecipListViewController {

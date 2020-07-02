@@ -401,8 +401,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gxL-Ow-Unw"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Reciplease" id="AAw-GK-T5U"/>
+                    <navigationItem key="navigationItem" title="Reciplease" id="AAw-GK-T5U" customClass="CustomNavItem" customModule="Reciplease" customModuleProvider="target"/>
                     <connections>
+                        <outlet property="navBar" destination="AAw-GK-T5U" id="Zo2-PL-SFv"/>
                         <segue destination="vfj-gF-W9A" kind="show" identifier="segueToDetailVC" id="DfK-vh-wWN"/>
                     </connections>
                 </viewController>
@@ -418,23 +419,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tQh-KZ-Ocm">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="tQh-KZ-Ocm">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="648"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSO-eZ-8dE">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="324"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="269.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n0P-0a-PcE">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="324"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="269.5"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="botCellShadow" translatesAutoresizingMaskIntoConstraints="NO" id="Bkr-kM-tMZ">
-                                                <rect key="frame" x="0.0" y="244" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="189.5" width="414" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Bkr-kM-tMZ" secondAttribute="height" multiplier="31:6" id="oHY-bD-pTe"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8G-ma-ziR">
-                                                <rect key="frame" x="0.0" y="238.5" width="414" height="85.5"/>
+                                                <rect key="frame" x="0.0" y="183.5" width="414" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="b8G-ma-ziR" secondAttribute="height" multiplier="29:6" id="w7M-ls-F46"/>
                                                 </constraints>
@@ -508,6 +509,7 @@
                                             <constraint firstAttribute="bottom" secondItem="b8G-ma-ziR" secondAttribute="bottom" id="2J2-WL-8xo"/>
                                             <constraint firstItem="n0P-0a-PcE" firstAttribute="top" secondItem="SSO-eZ-8dE" secondAttribute="top" id="3UV-wl-zw3"/>
                                             <constraint firstAttribute="trailing" secondItem="Bkr-kM-tMZ" secondAttribute="trailing" id="3x8-pC-I93"/>
+                                            <constraint firstAttribute="width" secondItem="SSO-eZ-8dE" secondAttribute="height" multiplier="146:95" id="BHJ-ee-aHq"/>
                                             <constraint firstAttribute="trailing" secondItem="b8G-ma-ziR" secondAttribute="trailing" id="Pqu-hg-4ub"/>
                                             <constraint firstAttribute="bottom" secondItem="n0P-0a-PcE" secondAttribute="bottom" id="UKX-W9-IfZ"/>
                                             <constraint firstAttribute="trailing" secondItem="RxW-qt-wwg" secondAttribute="trailing" constant="8" id="cG1-Os-dvg"/>
@@ -520,14 +522,11 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auZ-MJ-dGv">
-                                        <rect key="frame" x="0.0" y="324" width="414" height="324"/>
+                                        <rect key="frame" x="0.0" y="269.5" width="414" height="378.5"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wBR-3m-g5j">
-                                                <rect key="frame" x="0.0" y="41.5" width="414" height="294"/>
+                                                <rect key="frame" x="0.0" y="41.5" width="414" height="337"/>
                                                 <color key="backgroundColor" red="0.20779976250000001" green="0.20000272990000001" blue="0.2000019848" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="wBR-3m-g5j" secondAttribute="height" multiplier="69:49" id="MYQ-xP-Kz7"/>
-                                                </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientListCell" id="qhu-ee-Ak4" customClass="ListTableViewCell" customModule="Reciplease" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="414" height="50"/>
@@ -574,6 +573,7 @@
                                         <constraints>
                                             <constraint firstItem="Wb3-1Q-EA5" firstAttribute="leading" secondItem="auZ-MJ-dGv" secondAttribute="leading" constant="8" id="7xt-Sl-RoH"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Wb3-1Q-EA5" secondAttribute="trailing" constant="20" symbolic="YES" id="Qc5-e4-x3z"/>
+                                            <constraint firstAttribute="bottom" secondItem="wBR-3m-g5j" secondAttribute="bottom" id="Sr1-vh-LpI"/>
                                             <constraint firstAttribute="trailing" secondItem="wBR-3m-g5j" secondAttribute="trailing" id="Zi9-KT-b8E"/>
                                             <constraint firstItem="wBR-3m-g5j" firstAttribute="leading" secondItem="auZ-MJ-dGv" secondAttribute="leading" id="gHc-Sz-cSN"/>
                                             <constraint firstItem="wBR-3m-g5j" firstAttribute="top" secondItem="Wb3-1Q-EA5" secondAttribute="bottom" id="v6w-2Z-0g2"/>
@@ -610,7 +610,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8J1-9f-dWm"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Reciplease" id="isr-Wk-pmv"/>
+                    <navigationItem key="navigationItem" title="Reciplease" id="isr-Wk-pmv" customClass="CustomNavItem" customModule="Reciplease" customModuleProvider="target"/>
                     <connections>
                         <outlet property="getDirectionButton" destination="aZa-S7-BFF" id="Mlk-JD-KHv"/>
                         <outlet property="recipeImageView" destination="n0P-0a-PcE" id="gKh-lp-939"/>

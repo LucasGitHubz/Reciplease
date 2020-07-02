@@ -27,6 +27,7 @@
 		C692371224A0D0D500B11A98 /* RecipListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692371124A0D0D500B11A98 /* RecipListViewController.swift */; };
 		C692371424A0D20A00B11A98 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692371324A0D20A00B11A98 /* DetailsViewController.swift */; };
 		C692371624A0D21700B11A98 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692371524A0D21700B11A98 /* InstructionsViewController.swift */; };
+		C6B8394E24AE5F7D000CF2E9 /* UINavigationBar+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8394D24AE5F7D000CF2E9 /* UINavigationBar+extension.swift */; };
 		C6D4440C24A26DC3008DBEA4 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4440B24A26DC3008DBEA4 /* CustomButton.swift */; };
 		C6D4440E24A26F22008DBEA4 /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4440D24A26F22008DBEA4 /* ListService.swift */; };
 		C6F4FB7A24A5EF2500891C6D /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F4FB7924A5EF2500891C6D /* ListTableViewCell.swift */; };
@@ -78,6 +79,7 @@
 		C692371124A0D0D500B11A98 /* RecipListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipListViewController.swift; sourceTree = "<group>"; };
 		C692371324A0D20A00B11A98 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		C692371524A0D21700B11A98 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		C6B8394D24AE5F7D000CF2E9 /* UINavigationBar+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+extension.swift"; sourceTree = "<group>"; };
 		C6D4440B24A26DC3008DBEA4 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C6D4440D24A26F22008DBEA4 /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
 		C6F4FB7924A5EF2500891C6D /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			children = (
 				C6F4FB7E24A5FB4D00891C6D /* UIViewController+extension.swift */,
 				C623275624ACA1E0003AC667 /* UIImageView+extension.swift */,
+				C6B8394D24AE5F7D000CF2E9 /* UINavigationBar+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				C637382524AA45C4006932B9 /* WrapperAPI.swift in Sources */,
 				C677FC8824ADFE2900C5B275 /* StyleView.swift in Sources */,
 				C692371224A0D0D500B11A98 /* RecipListViewController.swift in Sources */,
+				C6B8394E24AE5F7D000CF2E9 /* UINavigationBar+extension.swift in Sources */,
 				C60FEE7224A6327600581FDA /* CustomNavigationBar.swift in Sources */,
 				C692371024A0CF8D00B11A98 /* FavoriteViewController.swift in Sources */,
 				C6D4440C24A26DC3008DBEA4 /* CustomButton.swift in Sources */,
