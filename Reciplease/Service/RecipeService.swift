@@ -50,10 +50,11 @@ class RecipeService {
 
                     let names = recipesData.hits.compactMap { $0.recipe?.label }
                     let ingredients = self.makeIngredientTab(with: recipesData)
+                    let yield = recipesData.hits.compactMap { $0.recipe?.yield }
                     let time = recipesData.hits.compactMap { $0.recipe?.totalTime }
                     let image = recipesData.hits.compactMap { $0.recipe?.image }
 
-                    let completRecipe = FinalRecipe(name: names, ingredient: ingredients, time: time, image: image)
+                    let completRecipe = FinalRecipe(name: names, ingredient: ingredients, time: time, yield: yield, image: image)
                     callBack(true, completRecipe)
                 }
         }

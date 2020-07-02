@@ -20,6 +20,7 @@ class SearchViewController: UIViewController {
     private var nameTab = [String?]()
     private var ingredientTab = [[String]]()
     private var timeTab = [Double]()
+    private var yieldTab = [Double]()
     var imageTab = [String]()
 
     private func toogleActivityIndicator(idIndicator: Int, shown: Bool) {
@@ -75,6 +76,7 @@ class SearchViewController: UIViewController {
         nameTab = recipesData.name
         ingredientTab = recipesData.ingredient
         timeTab = recipesData.time
+        yieldTab = recipesData.yield
         imageTab = recipesData.image
         completionHandler(true)
     }
@@ -87,6 +89,7 @@ class SearchViewController: UIViewController {
             successVC.nameTab = nameTab
             successVC.ingredientTab = ingredientTab
             successVC.timeTab = timeTab
+            successVC.yieldTab = yieldTab
             successVC.imageTab = imageTab
         }
     }

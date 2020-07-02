@@ -13,6 +13,7 @@ class RecipListViewController: UIViewController {
     var nameTab = [String?]()
     var ingredientTab = [[String]]()
     var timeTab = [Double]()
+    var yieldTab = [Double]()
     var imageTab = [String]()
 }
 
@@ -33,12 +34,14 @@ extension RecipListViewController: UITableViewDataSource {
         let name = nameTab[indexPath.row]
         let ingredient = ingredientTab[indexPath.row].joined(separator: ", ")
         let time = timeTab[indexPath.row]
+        let yield = yieldTab[indexPath.row]
         let image = imageTab[indexPath.row]
 
         cell.recipeImageView.downloaded(from: image)
         cell.recipeTitleLabel.text = name
         cell.ingredientsLabel.text = ingredient
         cell.timeLabel.text = "\(time) min"
+        cell.yieldLabel.text = String(yield)
 
         return cell
     }
