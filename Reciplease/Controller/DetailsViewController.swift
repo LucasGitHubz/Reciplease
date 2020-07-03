@@ -14,6 +14,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var yieldLabel: UILabel!
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var getDirectionButton: CustomButton!
+    @IBOutlet weak var starImage: UIImageView!
     
     var name = String()
     var ingredients = [String]()
@@ -28,6 +29,21 @@ class DetailsViewController: UIViewController {
         recipeImageView.downloaded(from: image)
 
         navigationController?.navigationBar.setBackButtonTitle()
+    }
+
+    private func changeStarItemColor() {
+        if starImage.tintColor == #colorLiteral(red: 0.2358415127, green: 0.5858561397, blue: 0.3734640479, alpha: 1) {
+            starImage.tintColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        } else {
+            starImage.tintColor = #colorLiteral(red: 0.2358415127, green: 0.5858561397, blue: 0.3734640479, alpha: 1)
+        }
+    }
+
+    @IBAction func didTapOnStarButton(_ sender: Any) {
+        changeStarItemColor()
+        // To do list:
+        // Add recipe's informations to a "favorite" tab if it's not already added
+        // If it's already added, delete it
     }
     
     @IBAction func didTapGetDirectionButton(_ sender: Any) {

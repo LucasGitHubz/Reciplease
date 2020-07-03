@@ -250,7 +250,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CrO-zh-kaC">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.20779976250000001" green="0.20000272990000001" blue="0.2000019848" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" id="Im4-HE-g5M" customClass="RecipeListTableViewCell" customModule="Reciplease" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="130"/>
@@ -610,11 +610,41 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8J1-9f-dWm"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Reciplease" id="isr-Wk-pmv" customClass="CustomNavItem" customModule="Reciplease" customModuleProvider="target"/>
+                    <navigationItem key="navigationItem" title="Reciplease" id="isr-Wk-pmv" customClass="CustomNavItem" customModule="Reciplease" customModuleProvider="target">
+                        <barButtonItem key="rightBarButtonItem" id="8wy-VC-yMp">
+                            <view key="customView" contentMode="scaleToFill" id="Cmr-HT-5QY">
+                                <rect key="frame" x="344" y="3" width="50" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="CAa-yd-9GC">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="38"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlX-73-NIk">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="38"/>
+                                        <connections>
+                                            <action selector="didTapOnStarButton:" destination="vfj-gF-W9A" eventType="touchUpInside" id="MAW-CJ-n4x"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CAa-yd-9GC" firstAttribute="leading" secondItem="Cmr-HT-5QY" secondAttribute="leading" id="4T7-Mg-Egk"/>
+                                    <constraint firstItem="CAa-yd-9GC" firstAttribute="top" secondItem="Cmr-HT-5QY" secondAttribute="top" id="Alo-sC-G6J"/>
+                                    <constraint firstAttribute="bottom" secondItem="CAa-yd-9GC" secondAttribute="bottom" id="FdJ-ae-lQt"/>
+                                    <constraint firstAttribute="trailing" secondItem="CAa-yd-9GC" secondAttribute="trailing" id="MZ9-b5-mQj"/>
+                                    <constraint firstAttribute="bottom" secondItem="zlX-73-NIk" secondAttribute="bottom" id="Pio-Ip-Q7P"/>
+                                    <constraint firstItem="zlX-73-NIk" firstAttribute="leading" secondItem="Cmr-HT-5QY" secondAttribute="leading" id="eqC-x5-F1d"/>
+                                    <constraint firstAttribute="trailing" secondItem="zlX-73-NIk" secondAttribute="trailing" id="rae-0D-Qfl"/>
+                                    <constraint firstItem="zlX-73-NIk" firstAttribute="top" secondItem="Cmr-HT-5QY" secondAttribute="top" id="uMH-oW-p4X"/>
+                                </constraints>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="getDirectionButton" destination="aZa-S7-BFF" id="Mlk-JD-KHv"/>
                         <outlet property="recipeImageView" destination="n0P-0a-PcE" id="gKh-lp-939"/>
                         <outlet property="recipeTitleLabel" destination="b8G-ma-ziR" id="h4H-DL-UG4"/>
+                        <outlet property="starImage" destination="CAa-yd-9GC" id="MAE-Vl-fPb"/>
                         <outlet property="timeLabel" destination="crR-6Z-Lw6" id="jRv-dj-nMQ"/>
                         <outlet property="yieldLabel" destination="XGx-PL-RQf" id="Ula-mG-T0S"/>
                         <segue destination="rdd-3p-25R" kind="show" id="MbP-8Z-m68"/>
@@ -692,5 +722,6 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="botCellShadow" width="2000" height="200"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>

@@ -11,8 +11,9 @@ import UIKit
 extension UINavigationBar {
     func setBackButtonTitle() {
         let barButton = UIBarButtonItem()
-        barButton.title = "back"
+        barButton.title = "Back"
         barButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 20) as Any], for: UIControl.State.normal)
+
         self.topItem?.backBarButtonItem = barButton
     }
 }
