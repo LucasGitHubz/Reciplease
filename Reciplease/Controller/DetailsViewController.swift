@@ -39,8 +39,16 @@ class DetailsViewController: UIViewController {
         }
     }
 
+    private func saveTest(test name: String) {
+        let test = Favorites(context: AppDelegate.viewContext)
+        test.test = name
+        try? AppDelegate.viewContext.save()
+    }
+
     @IBAction func didTapOnStarButton(_ sender: Any) {
         changeStarItemColor()
+
+        saveTest(test: name)
         // To do list:
         // Add recipe's informations to a "favorite" tab if it's not already added
         // If it's already added, delete it

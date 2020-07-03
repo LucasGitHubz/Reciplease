@@ -10,3 +10,5 @@ disabled_rules:
 - closure_parameter_position
 - unused_optional_binding
 - identifier_name
+- force_cast
+- unused_closure_parameter

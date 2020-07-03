@@ -9,7 +9,6 @@
 import UIKit
 
 class RecipListViewController: UIViewController {
-    @IBOutlet weak var navBar: UINavigationItem!
     // MARK: Properties
     var nameTab = [String]()
     var ingredientTab = [[String]]()

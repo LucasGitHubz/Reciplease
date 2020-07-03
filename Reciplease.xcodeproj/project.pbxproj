@@ -14,6 +14,8 @@
 		C637382524AA45C4006932B9 /* WrapperAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637382424AA45C4006932B9 /* WrapperAPI.swift */; };
 		C637382724AA468F006932B9 /* RecipeCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637382624AA468F006932B9 /* RecipeCodable.swift */; };
 		C637382924AA7CDD006932B9 /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637382824AA7CDD006932B9 /* RecipeService.swift */; };
+		C65359EE24AF49BA0066B660 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C65359EC24AF49BA0066B660 /* Reciplease.xcdatamodeld */; };
+		C65359F024AF4B780066B660 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65359EF24AF4B780066B660 /* Favorites.swift */; };
 		C677FC8824ADFE2900C5B275 /* StyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677FC8724ADFE2900C5B275 /* StyleView.swift */; };
 		C69236DB24A0AE6E00B11A98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69236DA24A0AE6E00B11A98 /* AppDelegate.swift */; };
 		C69236DD24A0AE6E00B11A98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69236DC24A0AE6E00B11A98 /* SceneDelegate.swift */; };
@@ -60,6 +62,8 @@
 		C637382424AA45C4006932B9 /* WrapperAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperAPI.swift; sourceTree = "<group>"; };
 		C637382624AA468F006932B9 /* RecipeCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCodable.swift; sourceTree = "<group>"; };
 		C637382824AA7CDD006932B9 /* RecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeService.swift; sourceTree = "<group>"; };
+		C65359ED24AF49BA0066B660 /* Reciplease.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reciplease.xcdatamodel; sourceTree = "<group>"; };
+		C65359EF24AF4B780066B660 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		C677FC8724ADFE2900C5B275 /* StyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleView.swift; sourceTree = "<group>"; };
 		C69236D724A0AE6E00B11A98 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69236DA24A0AE6E00B11A98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				C637382624AA468F006932B9 /* RecipeCodable.swift */,
+				C65359EC24AF49BA0066B660 /* Reciplease.xcdatamodeld */,
+				C65359EF24AF4B780066B660 /* Favorites.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 				C60FEE7024A5FF9B00581FDA /* CustomTabBar.swift in Sources */,
 				C69236DB24A0AE6E00B11A98 /* AppDelegate.swift in Sources */,
 				C637382924AA7CDD006932B9 /* RecipeService.swift in Sources */,
+				C65359F024AF4B780066B660 /* Favorites.swift in Sources */,
 				C637382524AA45C4006932B9 /* WrapperAPI.swift in Sources */,
 				C677FC8824ADFE2900C5B275 /* StyleView.swift in Sources */,
 				C692371224A0D0D500B11A98 /* RecipListViewController.swift in Sources */,
@@ -402,6 +409,7 @@
 				C6F4FB7F24A5FB4D00891C6D /* UIViewController+extension.swift in Sources */,
 				C692371624A0D21700B11A98 /* InstructionsViewController.swift in Sources */,
 				C692371424A0D20A00B11A98 /* DetailsViewController.swift in Sources */,
+				C65359EE24AF49BA0066B660 /* Reciplease.xcdatamodeld in Sources */,
 				C6F4FB7A24A5EF2500891C6D /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -731,6 +739,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C65359EC24AF49BA0066B660 /* Reciplease.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C65359ED24AF49BA0066B660 /* Reciplease.xcdatamodel */,
+			);
+			currentVersion = C65359ED24AF49BA0066B660 /* Reciplease.xcdatamodel */;
+			path = Reciplease.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C69236CF24A0AE6E00B11A98 /* Project object */;
 }
