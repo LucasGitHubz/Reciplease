@@ -50,7 +50,7 @@ class SearchViewController: UIViewController {
             return presentAlert(message: AlertMessage.init().emptyListError)
         }
         let ingredients = ListService.ingredients.joined(separator: ",")
-        RecipeService.shared.getTranslation(userIngredients: ingredients) { (success, completRecipe) in
+        RecipeService.shared.getRecipeData(userIngredients: ingredients) { (success, completRecipe) in
             DispatchQueue.main.async {
                 self.toogleActivityIndicator(idIndicator: idIndicator, shown: true)
                 if success {

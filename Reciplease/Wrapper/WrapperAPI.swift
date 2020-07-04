@@ -12,9 +12,7 @@ import Alamofire
 class WrapperAPI {
     static var shared = WrapperAPI()
     private init () {}
-    
-    var session = URLSession(configuration: .default)
-    
+
     struct AlertError: Error {
         let error = "L'application n'a pas pu récupérer les données nécessaires. Vérifiez que vous êtes bien connecté à internet"
     }

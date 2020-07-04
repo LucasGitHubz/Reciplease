@@ -297,12 +297,10 @@ public final class PublicKeysTrustEvaluator: ServerTrustEvaluating {
 
         let pinnedKeysInServerKeys: Bool = {
             for serverPublicKey in trust.af.publicKeys {
-                for pinnedPublicKey in keys {
-                    if serverPublicKey == pinnedPublicKey {
+                for pinnedPublicKey in keys where serverPublicKey == pinnedPublicKey {
                         return true
                     }
                 }
-            }
             return false
         }()
 

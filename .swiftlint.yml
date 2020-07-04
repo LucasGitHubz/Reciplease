@@ -14,3 +14,9 @@ disabled_rules:
 - unused_closure_parameter
 - type_name
 - cyclomatic_complexity
+- nesting
+- opening_brace
+- weak_delegate
+- syntactic_sugar
+- empty_enum_arguments
+- unused_setter_value
