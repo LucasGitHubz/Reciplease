@@ -705,7 +705,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TgA-72-ngj">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="625"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                 <color key="backgroundColor" red="0.20779976250000001" green="0.20000272990000001" blue="0.2000019848" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteCell" id="egd-j2-lr6" customClass="RecipeListTableViewCell" customModule="Reciplease" customModuleProvider="target">
@@ -847,38 +847,13 @@
                                     <outlet property="delegate" destination="noP-g7-eI6" id="yik-mi-ale"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwM-6F-iTT">
-                                <rect key="frame" x="115" y="650.5" width="184" height="54.5"/>
-                                <color key="backgroundColor" red="0.99767655129999999" green="0.0069755436850000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="mwM-6F-iTT" secondAttribute="height" multiplier="37:11" id="fj6-CN-bSI"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="didTapDeleteButton:" destination="noP-g7-eI6" eventType="touchUpInside" id="r0o-Da-1ub"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2E-Tt-z4y">
-                                <rect key="frame" x="348" y="662" width="46" height="30"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="didTabReloadButton:" destination="noP-g7-eI6" eventType="touchUpInside" id="uEr-JV-Dgd"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="JQh-dL-S5U" firstAttribute="trailing" secondItem="L2E-Tt-z4y" secondAttribute="trailing" constant="20" id="0gd-vC-kIx"/>
-                            <constraint firstItem="L2E-Tt-z4y" firstAttribute="top" secondItem="TgA-72-ngj" secondAttribute="bottom" constant="37" id="8tB-Mc-9Vg"/>
-                            <constraint firstItem="JQh-dL-S5U" firstAttribute="trailing" secondItem="mwM-6F-iTT" secondAttribute="trailing" constant="115" id="A9F-PO-8Je"/>
-                            <constraint firstItem="JQh-dL-S5U" firstAttribute="bottom" secondItem="L2E-Tt-z4y" secondAttribute="bottom" constant="33" id="BDG-r1-7So"/>
                             <constraint firstItem="TgA-72-ngj" firstAttribute="leading" secondItem="JQh-dL-S5U" secondAttribute="leading" id="UP7-TK-58q"/>
-                            <constraint firstItem="mwM-6F-iTT" firstAttribute="leading" secondItem="JQh-dL-S5U" secondAttribute="leading" constant="115" id="VcW-dO-OQo"/>
                             <constraint firstItem="TgA-72-ngj" firstAttribute="trailing" secondItem="JQh-dL-S5U" secondAttribute="trailing" id="X1e-Lf-MdY"/>
                             <constraint firstItem="TgA-72-ngj" firstAttribute="top" secondItem="JQh-dL-S5U" secondAttribute="top" id="Y9G-xR-ryz"/>
-                            <constraint firstItem="L2E-Tt-z4y" firstAttribute="leading" secondItem="mwM-6F-iTT" secondAttribute="trailing" constant="49" id="gGV-rR-ksx"/>
-                            <constraint firstItem="JQh-dL-S5U" firstAttribute="bottom" secondItem="mwM-6F-iTT" secondAttribute="bottom" constant="20" id="s0q-wZ-RBw"/>
-                            <constraint firstItem="TgA-72-ngj" firstAttribute="bottom" secondItem="JQh-dL-S5U" secondAttribute="bottom" constant="-100" id="sd9-9B-dJ0"/>
+                            <constraint firstItem="TgA-72-ngj" firstAttribute="bottom" secondItem="JQh-dL-S5U" secondAttribute="bottom" id="sd9-9B-dJ0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JQh-dL-S5U"/>
                     </view>

@@ -24,6 +24,7 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkRecipeAlreadyAddedToFavorite(name)
         recipeTitleLabel.text = name
         timeLabel.text = "\(time) min"
         yieldLabel.text = yield
@@ -32,35 +33,28 @@ class DetailsViewController: UIViewController {
         navigationController?.navigationBar.setBackButtonTitle()
     }
 
-    private func changeStarItemColor() {
+    private func checkRecipeAlreadyAddedToFavorite(_ name: String) {
+        guard RecipeData.allRecipesData.count > 0 else {
+            return
+        }
+
+        for index in 0...RecipeData.allRecipesData.count - 1 where RecipeData.allRecipesData[index].name == name {
+                starImage.tintColor = #colorLiteral(red: 0.2358415127, green: 0.5858561397, blue: 0.3734640479, alpha: 1)
+            }
+    }
+
+    private func addRecipeToFavoriteOrDelete() {
         if starImage.tintColor == #colorLiteral(red: 0.2358415127, green: 0.5858561397, blue: 0.3734640479, alpha: 1) {
+            RecipeData.deleteRecipeData(name)
             starImage.tintColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
         } else {
+            RecipeData.saveRecipeData(name, ingredients, time, yield, image)
             starImage.tintColor = #colorLiteral(red: 0.2358415127, green: 0.5858561397, blue: 0.3734640479, alpha: 1)
         }
     }
 
-    private func saveRecipeData() {
-        let recipeData = RecipeData(context: AppDelegate.viewContext)
-        recipeData.name = name
-        recipeData.ingredient = ingredients.joined(separator: ", ")
-        recipeData.time = time
-        recipeData.yield = yield
-        recipeData.image = image
-
-        try? AppDelegate.viewContext.save()
-    }
-
     @IBAction func didTapOnStarButton(_ sender: Any) {
-        changeStarItemColor()
-
-        var compteur = 0
-        saveRecipeData()
-        print("tab \(RecipeData.allRecipesData)")
-        for index in RecipeData.allRecipesData {
-            print("\(compteur) - \(index)")
-            compteur += 1
-        }
+        addRecipeToFavoriteOrDelete()
         print("tab count\(RecipeData.allRecipesData.count)")
     }
     

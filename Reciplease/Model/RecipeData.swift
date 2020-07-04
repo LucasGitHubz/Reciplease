@@ -17,4 +17,23 @@ class RecipeData: NSManagedObject {
         }
         return data
     }
+    
+    static func saveRecipeData(_ name: String, _ ingredients: [String], _ time: String, _ yield: String, _ image: String) {
+        let recipeData = RecipeData(context: AppDelegate.viewContext)
+        recipeData.name = name
+        recipeData.ingredient = ingredients.joined(separator: ", ")
+        recipeData.time = time
+        recipeData.yield = yield
+        recipeData.image = image
+        
+        try? AppDelegate.viewContext.save()
+    }
+    
+    static func deleteRecipeData(_ name: String) {
+        for index in 0...RecipeData.allRecipesData.count - 1 where RecipeData.allRecipesData[index].name == name {
+            AppDelegate.viewContext.delete(RecipeData.allRecipesData[index])
+            try? AppDelegate.viewContext.save()
+            break
+        }
+    }
 }

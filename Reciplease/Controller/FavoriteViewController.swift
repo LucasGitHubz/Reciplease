@@ -22,17 +22,6 @@ class FavoriteViewController: UIViewController {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
-
-    @IBAction func didTapDeleteButton(_ sender: Any) {
-        print("tab count avant \(RecipeData.allRecipesData.count)")
-        RecipeData.allRecipesData.forEach { AppDelegate.viewContext.delete($0) }
-        //AppDelegate.viewContext.delete(RecipeData.allRecipesData[1])
-        try? AppDelegate.viewContext.save()
-        print("tab count \(RecipeData.allRecipesData.count)")
-    }
-    @IBAction func didTabReloadButton(_ sender: Any) {
-        tableView.reloadData()
-    }
 }
 
 extension FavoriteViewController {
