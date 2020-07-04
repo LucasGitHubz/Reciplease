@@ -12,3 +12,5 @@ disabled_rules:
 - identifier_name
 - force_cast
 - unused_closure_parameter
+- type_name
+- cyclomatic_complexity

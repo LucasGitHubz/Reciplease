@@ -16,7 +16,7 @@ class RecipeService {
 
     // MARK: Methods
 
-    private func getUrl(userIngredients: String) -> URL? {
+    private func getUrl(_ userIngredients: String) -> String {
         guard let appId = Bundle.main.object(forInfoDictionaryKey: "AppId") as? String else {
             fatalError()
         }
@@ -25,38 +25,32 @@ class RecipeService {
             fatalError()
         }
 
-        let recipeUrl = URL(string: "https://api.edamam.com/search?app_id=\(appId)&app_key=\(appKey)&q=\(userIngredients)")
+        let recipeUrl = "https://api.edamam.com/search?app_id=\(appId)&app_key=\(appKey)&q=\(userIngredients)"
         
         return recipeUrl
     }
-    // This method returns, if successful, the translated text to be used in TranslatorVC. Else, displays the corresponding error
-    func getTranslation(userIngredients: String, callBack: @escaping (Bool, FinalRecipe?) -> Void) {
-        guard let finalUrl = getUrl(userIngredients: userIngredients) else {
-            callBack(false, nil)
-            return
-        }
-
-        let request = URLRequest(url: finalUrl)
-        WrapperAPI.shared.perform(request, decode: ResponseRecipe.self) { (result) in
-                switch result {
-                case .failure(let error):
-                    print(error)
+    // This method returns, if successful, the recipesData to be used in RecipListVC. Else, displays the corresponding error
+    func getRecipeData(userIngredients: String, callBack: @escaping (Bool, FinalRecipe?) -> Void) {
+        WrapperAPI.shared.perform(url: getUrl(userIngredients), decode: ResponseRecipe.self) { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+                callBack(false, nil)
+            case .success(let recipesData):
+                guard recipesData.hits.count > 0 else {
                     callBack(false, nil)
-                case .success(let recipesData):
-                    guard recipesData.hits.count > 0 else {
-                        callBack(false, nil)
-                        return
-                    }
-
-                    let names = recipesData.hits.compactMap { $0.recipe?.label }
-                    let ingredients = self.makeIngredientTab(with: recipesData)
-                    let yield = recipesData.hits.compactMap { $0.recipe?.yield }
-                    let time = recipesData.hits.compactMap { $0.recipe?.totalTime }
-                    let image = recipesData.hits.compactMap { $0.recipe?.image }
-
-                    let completRecipe = FinalRecipe(name: names, ingredient: ingredients, time: time, yield: yield, image: image)
-                    callBack(true, completRecipe)
+                    return
                 }
+
+                let names = recipesData.hits.compactMap { $0.recipe?.label }
+                let ingredients = self.makeIngredientTab(with: recipesData)
+                let yield = recipesData.hits.compactMap { $0.recipe?.yield }
+                let time = recipesData.hits.compactMap { $0.recipe?.totalTime }
+                let image = recipesData.hits.compactMap { $0.recipe?.image }
+
+                let completRecipe = FinalRecipe(name: names, ingredient: ingredients, time: time, yield: yield, image: image)
+                callBack(true, completRecipe)
+            }
         }
     }
 
