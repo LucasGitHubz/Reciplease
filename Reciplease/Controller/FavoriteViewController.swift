@@ -7,19 +7,32 @@
 //
 
 import UIKit
+import CoreData
 
 class FavoriteViewController: UIViewController {
-    var nameTab = [String]()
-    var ingredientTab = [[String]]()
-    var timeTab = [Double]()
-    var yieldTab = [Double]()
-    var imageTab = [String]()
+    @IBOutlet weak var tableView: UITableView!
 
     private var name = String()
     private var ingredients = [String]()
     private var time = String()
     private var yield = String()
     private var image = String()
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+
+    @IBAction func didTapDeleteButton(_ sender: Any) {
+        print("tab count avant \(RecipeData.allRecipesData.count)")
+        RecipeData.allRecipesData.forEach { AppDelegate.viewContext.delete($0) }
+        //AppDelegate.viewContext.delete(RecipeData.allRecipesData[1])
+        try? AppDelegate.viewContext.save()
+        print("tab count \(RecipeData.allRecipesData.count)")
+    }
+    @IBAction func didTabReloadButton(_ sender: Any) {
+        tableView.reloadData()
+    }
 }
 
 extension FavoriteViewController {
@@ -38,14 +51,14 @@ extension FavoriteViewController {
 }
 
 extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        name = nameTab[indexPath.row]
-        ingredients = ingredientTab[indexPath.row]
-        time = String(timeTab[indexPath.row])
-        yield = String(yieldTab[indexPath.row])
-        image = imageTab[indexPath.row]
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            AppDelegate.viewContext.delete(RecipeData.allRecipesData[indexPath.row])
 
-        performSegue(withIdentifier: "segueToDetailVC", sender: self)
+            try? AppDelegate.viewContext.save()
+            print("tab count \(RecipeData.allRecipesData.count)")
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,25 +66,25 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nameTab.count
+        return RecipeData.allRecipesData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeListTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteCell", for: indexPath) as? RecipeListTableViewCell else {
             return UITableViewCell()
         }
-        
-        let name = nameTab[indexPath.row]
-        let ingredient = ingredientTab[indexPath.row].joined(separator: ", ")
-        let time = timeTab[indexPath.row]
-        let yield = yieldTab[indexPath.row]
-        let image = imageTab[indexPath.row]
 
-        cell.recipeImageView.downloaded(from: image)
+        let name = RecipeData.allRecipesData[indexPath.row].name
+        let ingredient = RecipeData.allRecipesData[indexPath.row].ingredient
+        let time = RecipeData.allRecipesData[indexPath.row].time
+        let yield = RecipeData.allRecipesData[indexPath.row].yield
+        let image = RecipeData.allRecipesData[indexPath.row].image ?? "botCellShadow"
+
         cell.recipeTitleLabel.text = name
         cell.ingredientsLabel.text = ingredient
-        cell.timeLabel.text = "\(time) min"
-        cell.yieldLabel.text = String(yield)
+        cell.timeLabel.text = "\(time ?? "0") min"
+        cell.yieldLabel.text = String(yield ?? "0")
+        cell.recipeImageView.downloaded(from: image)
 
         return cell
     }

@@ -23,6 +23,7 @@ class DetailsViewController: UIViewController {
     var image = String()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         recipeTitleLabel.text = name
         timeLabel.text = "\(time) min"
         yieldLabel.text = yield
@@ -39,19 +40,28 @@ class DetailsViewController: UIViewController {
         }
     }
 
-    private func saveTest(test name: String) {
-        let test = Favorites(context: AppDelegate.viewContext)
-        test.test = name
+    private func saveRecipeData() {
+        let recipeData = RecipeData(context: AppDelegate.viewContext)
+        recipeData.name = name
+        recipeData.ingredient = ingredients.joined(separator: ", ")
+        recipeData.time = time
+        recipeData.yield = yield
+        recipeData.image = image
+
         try? AppDelegate.viewContext.save()
     }
 
     @IBAction func didTapOnStarButton(_ sender: Any) {
         changeStarItemColor()
 
-        saveTest(test: name)
-        // To do list:
-        // Add recipe's informations to a "favorite" tab if it's not already added
-        // If it's already added, delete it
+        var compteur = 0
+        saveRecipeData()
+        print("tab \(RecipeData.allRecipesData)")
+        for index in RecipeData.allRecipesData {
+            print("\(compteur) - \(index)")
+            compteur += 1
+        }
+        print("tab count\(RecipeData.allRecipesData.count)")
     }
     
     @IBAction func didTapGetDirectionButton(_ sender: Any) {

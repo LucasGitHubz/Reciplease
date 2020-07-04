@@ -18,7 +18,6 @@ class ListService {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: "ingredient")
-            print("ingredientTab \(ingredients)")
         }
     }
 }
