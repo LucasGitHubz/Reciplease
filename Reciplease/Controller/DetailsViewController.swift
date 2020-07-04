@@ -9,6 +9,7 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
+    // MARK: Outlets
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var yieldLabel: UILabel!
@@ -29,20 +30,26 @@ class DetailsViewController: UIViewController {
         timeLabel.text = "\(time) min"
         yieldLabel.text = yield
         recipeImageView.downloaded(from: image)
-
+        
         navigationController?.navigationBar.setBackButtonTitle()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkRecipeAlreadyAddedToFavorite(name)
+    }
+    
     private func checkRecipeAlreadyAddedToFavorite(_ name: String) {
         guard RecipeData.allRecipesData.count > 0 else {
+            starImage.tintColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
             return
         }
-
+        
         for index in 0...RecipeData.allRecipesData.count - 1 where RecipeData.allRecipesData[index].name == name {
-                starImage.tintColor = #colorLiteral(red: 0.2358415127, green: 0.5858561397, blue: 0.3734640479, alpha: 1)
-            }
+            starImage.tintColor = #colorLiteral(red: 0.2358415127, green: 0.5858561397, blue: 0.3734640479, alpha: 1)
+        }
     }
-
+    
     private func addRecipeToFavoriteOrDelete() {
         if starImage.tintColor == #colorLiteral(red: 0.2358415127, green: 0.5858561397, blue: 0.3734640479, alpha: 1) {
             RecipeData.deleteRecipeData(name)
@@ -52,7 +59,7 @@ class DetailsViewController: UIViewController {
             starImage.tintColor = #colorLiteral(red: 0.2358415127, green: 0.5858561397, blue: 0.3734640479, alpha: 1)
         }
     }
-
+    
     @IBAction func didTapOnStarButton(_ sender: Any) {
         addRecipeToFavoriteOrDelete()
         print("tab count\(RecipeData.allRecipesData.count)")

@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 class FavoriteViewController: UIViewController {
+    // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
 
     private var name = String()
@@ -20,7 +21,16 @@ class FavoriteViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        checkFavoriteSectionNull()
         tableView.reloadData()
+    }
+
+    private func checkFavoriteSectionNull() {
+        guard RecipeData.allRecipesData.count > 0 else {
+            tableView.isHidden = true
+            return
+        }
+        tableView.isHidden = false
     }
 }
 
@@ -40,6 +50,17 @@ extension FavoriteViewController {
 }
 
 extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        name = RecipeData.allRecipesData[indexPath.row].name ?? ""
+        let ingredientsLine = RecipeData.allRecipesData[indexPath.row].ingredient ?? ""
+        ingredients = ingredientsLine.components(separatedBy: ", ")
+        time = RecipeData.allRecipesData[indexPath.row].time ?? ""
+        yield = RecipeData.allRecipesData[indexPath.row].yield ?? ""
+        image = RecipeData.allRecipesData[indexPath.row].image ?? ""
+
+        performSegue(withIdentifier: "segueToDetailVC", sender: self)
+    }
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             AppDelegate.viewContext.delete(RecipeData.allRecipesData[indexPath.row])
@@ -47,6 +68,7 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
             try? AppDelegate.viewContext.save()
             print("tab count \(RecipeData.allRecipesData.count)")
             tableView.deleteRows(at: [indexPath], with: .fade)
+            checkFavoriteSectionNull()
         }
     }
 

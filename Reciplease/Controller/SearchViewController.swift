@@ -9,6 +9,7 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+    // MARK: Outlets
     @IBOutlet weak var addButton: CustomButton!
     @IBOutlet weak var searchButton: CustomButton!
     @IBOutlet weak var textField: UITextField!
@@ -86,6 +87,7 @@ class SearchViewController: UIViewController {
             guard let successVC = segue.destination as? RecipListViewController else {
                 return presentAlert(message: AlertMessage.init().programError)
             }
+
             successVC.nameTab = nameTab
             successVC.ingredientTab = ingredientTab
             successVC.timeTab = timeTab
