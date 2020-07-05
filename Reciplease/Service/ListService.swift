@@ -9,9 +9,6 @@
 import Foundation
 
 class ListService {
-    static var shared = ListService()
-    private init() {}
-
     static var ingredients: [String] {
         get {
             return UserDefaults.standard.object(forKey: "ingredient") as? [String] ?? []
