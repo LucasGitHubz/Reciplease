@@ -25,7 +25,7 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkRecipeAlreadyAddedToFavorite(name)
+        checkIfRecipeAlreadyAddedToFavorite(name)
         recipeTitleLabel.text = name
         timeLabel.text = "\(time) min"
         yieldLabel.text = yield
@@ -36,10 +36,10 @@ class DetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkRecipeAlreadyAddedToFavorite(name)
+        checkIfRecipeAlreadyAddedToFavorite(name)
     }
     
-    private func checkRecipeAlreadyAddedToFavorite(_ name: String) {
+    private func checkIfRecipeAlreadyAddedToFavorite(_ name: String) {
         guard RecipeData.allRecipesData.count > 0 else {
             starImage.tintColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
             return
@@ -62,7 +62,6 @@ class DetailsViewController: UIViewController {
     
     @IBAction func didTapOnStarButton(_ sender: Any) {
         addRecipeToFavoriteOrDelete()
-        print("tab count\(RecipeData.allRecipesData.count)")
     }
     
     @IBAction func didTapGetDirectionButton(_ sender: Any) {

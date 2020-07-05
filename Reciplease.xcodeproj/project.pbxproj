@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,11 @@
 		C637382924AA7CDD006932B9 /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637382824AA7CDD006932B9 /* RecipeService.swift */; };
 		C65359F324AF72BB0066B660 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C65359F124AF72BB0066B660 /* Reciplease.xcdatamodeld */; };
 		C677FC8824ADFE2900C5B275 /* StyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677FC8724ADFE2900C5B275 /* StyleView.swift */; };
+		C67FBB8324B1EDE300BFD290 /* RecipeResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C67FBB8224B1EDE300BFD290 /* RecipeResponse.json */; };
+		C67FBB8524B1EE4900BFD290 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67FBB8424B1EE4900BFD290 /* FakeResponseData.swift */; };
+		C67FBB8724B1EE5400BFD290 /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67FBB8624B1EE5400BFD290 /* URLSessionFake.swift */; };
+		C67FBB8924B20DE400BFD290 /* WrapperAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67FBB8824B20DE400BFD290 /* WrapperAPITests.swift */; };
+		C67FBB8B24B20EC600BFD290 /* RecipeDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67FBB8A24B20EC600BFD290 /* RecipeDataTests.swift */; };
 		C69236DB24A0AE6E00B11A98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69236DA24A0AE6E00B11A98 /* AppDelegate.swift */; };
 		C69236DD24A0AE6E00B11A98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69236DC24A0AE6E00B11A98 /* SceneDelegate.swift */; };
 		C69236E224A0AE6E00B11A98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69236E024A0AE6E00B11A98 /* Main.storyboard */; };
@@ -74,6 +79,11 @@
 		C6508D17B42E116599E7CE9C /* Pods-Reciplease-RecipleaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease-RecipleaseUITests.release.xcconfig"; path = "Target Support Files/Pods-Reciplease-RecipleaseUITests/Pods-Reciplease-RecipleaseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C65359F224AF72BB0066B660 /* Reciplease.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reciplease.xcdatamodel; sourceTree = "<group>"; };
 		C677FC8724ADFE2900C5B275 /* StyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleView.swift; sourceTree = "<group>"; };
+		C67FBB8224B1EDE300BFD290 /* RecipeResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RecipeResponse.json; sourceTree = "<group>"; };
+		C67FBB8424B1EE4900BFD290 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
+		C67FBB8624B1EE5400BFD290 /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
+		C67FBB8824B20DE400BFD290 /* WrapperAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperAPITests.swift; sourceTree = "<group>"; };
+		C67FBB8A24B20EC600BFD290 /* RecipeDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDataTests.swift; sourceTree = "<group>"; };
 		C69236D724A0AE6E00B11A98 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69236DA24A0AE6E00B11A98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C69236DC24A0AE6E00B11A98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,7 +151,6 @@
 				CDA4DCACEAF9DACEB65F3EC7 /* Pods-RecipleaseTests.debug.xcconfig */,
 				35B3A1910B5D7DF8B1D5B618 /* Pods-RecipleaseTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -205,8 +214,13 @@
 		C69236F024A0AE7000B11A98 /* RecipleaseTests */ = {
 			isa = PBXGroup;
 			children = (
+				C67FBB8424B1EE4900BFD290 /* FakeResponseData.swift */,
+				C67FBB8624B1EE5400BFD290 /* URLSessionFake.swift */,
 				C69236F124A0AE7000B11A98 /* RecipleaseTests.swift */,
+				C67FBB8824B20DE400BFD290 /* WrapperAPITests.swift */,
+				C67FBB8A24B20EC600BFD290 /* RecipeDataTests.swift */,
 				C69236F324A0AE7000B11A98 /* Info.plist */,
+				C67FBB8224B1EDE300BFD290 /* RecipeResponse.json */,
 			);
 			path = RecipleaseTests;
 			sourceTree = "<group>";
@@ -397,6 +411,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C67FBB8324B1EDE300BFD290 /* RecipeResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +580,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C69236F224A0AE7000B11A98 /* RecipleaseTests.swift in Sources */,
+				C67FBB8B24B20EC600BFD290 /* RecipeDataTests.swift in Sources */,
+				C67FBB8724B1EE5400BFD290 /* URLSessionFake.swift in Sources */,
+				C67FBB8924B20DE400BFD290 /* WrapperAPITests.swift in Sources */,
+				C67FBB8524B1EE4900BFD290 /* FakeResponseData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

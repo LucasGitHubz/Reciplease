@@ -47,10 +47,11 @@ class SearchViewController: UIViewController {
     private func getRecipe(idIndicator: Int) {
         toogleActivityIndicator(idIndicator: idIndicator, shown: false)
         guard ListService.ingredients != [] else {
+            toogleActivityIndicator(idIndicator: idIndicator, shown: true)
             return presentAlert(message: AlertMessage.init().emptyListError)
         }
         let ingredients = ListService.ingredients.joined(separator: ",")
-        RecipeService.shared.getRecipeData(userIngredients: ingredients) { (success, completRecipe) in
+        RecipeService.init().getRecipeData(userIngredients: ingredients) { (success, completRecipe) in
             DispatchQueue.main.async {
                 self.toogleActivityIndicator(idIndicator: idIndicator, shown: true)
                 if success {

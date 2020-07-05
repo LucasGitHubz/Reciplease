@@ -9,29 +9,11 @@
 import Foundation
 
 class RecipeService {
-    static var shared = RecipeService()
-    private init() {}
-
-    // MARK: Properties
-
     // MARK: Methods
 
-    private func getUrl(_ userIngredients: String) -> String {
-        guard let appId = Bundle.main.object(forInfoDictionaryKey: "AppId") as? String else {
-            fatalError()
-        }
-
-        guard let appKey = Bundle.main.object(forInfoDictionaryKey: "AppKey") as? String else {
-            fatalError()
-        }
-
-        let recipeUrl = "https://api.edamam.com/search?app_id=\(appId)&app_key=\(appKey)&q=\(userIngredients)"
-        
-        return recipeUrl
-    }
     // This method returns, if successful, the recipesData to be used in RecipListVC. Else, displays the corresponding error
     func getRecipeData(userIngredients: String, callBack: @escaping (Bool, FinalRecipe?) -> Void) {
-        WrapperAPI.shared.perform(url: getUrl(userIngredients), decode: ResponseRecipe.self) { (result) in
+        WrapperAPI.shared.perform(userIngredient: userIngredients, decode: ResponseRecipe.self) { (result) in
             switch result {
             case .failure(let error):
                 print(error)
