@@ -262,7 +262,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SqH-DG-3rz">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MFv-NG-wnO">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="MFv-NG-wnO">
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                                                         </imageView>
                                                         <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="botCellShadow" translatesAutoresizingMaskIntoConstraints="NO" id="dhi-Fr-5rp">
@@ -424,7 +424,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSO-eZ-8dE">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="269.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n0P-0a-PcE">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="n0P-0a-PcE">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="269.5"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="botCellShadow" translatesAutoresizingMaskIntoConstraints="NO" id="Bkr-kM-tMZ">
@@ -646,7 +646,7 @@
                         <outlet property="starImage" destination="CAa-yd-9GC" id="MAE-Vl-fPb"/>
                         <outlet property="timeLabel" destination="crR-6Z-Lw6" id="jRv-dj-nMQ"/>
                         <outlet property="yieldLabel" destination="XGx-PL-RQf" id="Ula-mG-T0S"/>
-                        <segue destination="rdd-3p-25R" kind="show" id="MbP-8Z-m68"/>
+                        <segue destination="rdd-3p-25R" kind="show" identifier="segueToInstructions" id="MbP-8Z-m68"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9N-Qr-HN3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -736,7 +736,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xzl-gW-PCN">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KOd-a9-uFo">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="KOd-a9-uFo">
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                                                         </imageView>
                                                         <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="botCellShadow" translatesAutoresizingMaskIntoConstraints="NO" id="cmY-Dz-osH">
@@ -896,6 +896,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="botCellShadow" width="2000" height="200"/>
+        <image name="default" width="1920" height="1080"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>
