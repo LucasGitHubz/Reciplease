@@ -10,16 +10,19 @@ import Foundation
 import Alamofire
 
 class WrapperAPI {
+    // MARK: Singleton pattern
     static var shared = WrapperAPI()
     private init () {}
+
+    // MARK: Properties
+    var appId = Bundle.main.object(forInfoDictionaryKey: "AppId") as? String
+    var appKey = Bundle.main.object(forInfoDictionaryKey: "AppKey") as? String
 
     struct AlertError: Error {
         let error = "L'application n'a pas pu récupérer les données nécessaires. Vérifiez que vous êtes bien connecté à internet"
     }
 
-    var appId = Bundle.main.object(forInfoDictionaryKey: "AppId") as? String
-    var appKey = Bundle.main.object(forInfoDictionaryKey: "AppKey") as? String
-
+    // MARK: Methods
     func getUrlString(_ userIngredients: String, appId: String?, appKey: String?) -> String {
         guard let appId = appId else {
             return AlertError.init().error

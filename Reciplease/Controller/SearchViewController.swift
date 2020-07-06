@@ -24,6 +24,7 @@ class SearchViewController: UIViewController {
     private var yieldTab = [Double]()
     private var imageTab = [String]()
 
+    // MARK: Methods
     private func toogleActivityIndicator(idIndicator: Int, shown: Bool) {
         if idIndicator == 1 {
             addButton.isHidden = !shown
@@ -55,7 +56,7 @@ class SearchViewController: UIViewController {
             DispatchQueue.main.async {
                 self.toogleActivityIndicator(idIndicator: idIndicator, shown: true)
                 if success {
-                    self.update(with: completRecipe, completionHandler: { (success) in
+                    self.update(data: completRecipe, completionHandler: { (success) in
                         if success {
                             self.performSegue(withIdentifier: "segueToListVC", sender: self)
                         } else {
@@ -69,8 +70,8 @@ class SearchViewController: UIViewController {
         }
     }
 
-    private func update(with: FinalRecipe?, completionHandler: (Bool) -> Void) {
-        guard let recipesData = with else {
+    private func update(data: FinalRecipe?, completionHandler: (Bool) -> Void) {
+        guard let recipesData = data else {
             presentAlert(message: AlertMessage.init().programError)
             return
         }
@@ -82,21 +83,8 @@ class SearchViewController: UIViewController {
         imageTab = recipesData.image
         completionHandler(true)
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToListVC" {
-            guard let successVC = segue.destination as? RecipListViewController else {
-                return presentAlert(message: AlertMessage.init().programError)
-            }
-
-            successVC.nameTab = nameTab
-            successVC.ingredientTab = ingredientTab
-            successVC.timeTab = timeTab
-            successVC.yieldTab = yieldTab
-            successVC.imageTab = imageTab
-        }
-    }
-    
+   
+    // MARK: IBAction
     @IBAction func didTapAddButton(_ sender: Any) {
         toogleActivityIndicator(idIndicator: 1, shown: false)
         addIngredientToList()
@@ -115,6 +103,23 @@ class SearchViewController: UIViewController {
     }
 }
 
+extension SearchViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToListVC" {
+            guard let successVC = segue.destination as? RecipListViewController else {
+                return presentAlert(message: AlertMessage.init().programError)
+            }
+
+            successVC.nameTab = nameTab
+            successVC.ingredientTab = ingredientTab
+            successVC.timeTab = timeTab
+            successVC.yieldTab = yieldTab
+            successVC.imageTab = imageTab
+        }
+    }
+}
+
+// MARK: TableView gestion
 extension SearchViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -136,6 +141,7 @@ extension SearchViewController: UITableViewDataSource {
     }
 }
 
+// MARK: TextField gestion
 extension SearchViewController {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

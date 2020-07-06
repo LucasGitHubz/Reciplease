@@ -28,7 +28,8 @@ class RecipeData: NSManagedObject {
         
         try? AppDelegate.viewContext.save()
     }
-    
+
+    // Delete the recipe datas corresponding to the recipe's name given as parameter
     static func deleteRecipeData(_ name: String) {
         for index in 0...RecipeData.allRecipesData.count - 1 where RecipeData.allRecipesData[index].name == name {
             AppDelegate.viewContext.delete(RecipeData.allRecipesData[index])

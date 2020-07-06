@@ -22,6 +22,7 @@ class RecipListViewController: UIViewController {
     private var yield = String()
     private var image = String()
 
+    // MARK: Lyfecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.setBackButtonTitle()
@@ -43,6 +44,7 @@ extension RecipListViewController {
     }
 }
 
+// MARK: TableView gestion
 extension RecipListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         name = nameTab[indexPath.row]

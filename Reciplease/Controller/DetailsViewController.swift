@@ -16,13 +16,15 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var getDirectionButton: CustomButton!
     @IBOutlet weak var starImage: UIImageView!
-    
+
+    // MARK: Properties
     var name = String()
     var ingredients = [String]()
     var time = String()
     var yield = String()
     var image = String()
     
+    // MARK: Lyfecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         checkIfRecipeAlreadyAddedToFavorite(name)
@@ -39,6 +41,7 @@ class DetailsViewController: UIViewController {
         checkIfRecipeAlreadyAddedToFavorite(name)
     }
     
+    // MARK: Methods
     private func checkIfRecipeAlreadyAddedToFavorite(_ name: String) {
         guard RecipeData.allRecipesData.count > 0 else {
             starImage.tintColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
@@ -60,6 +63,7 @@ class DetailsViewController: UIViewController {
         }
     }
     
+    // MARK: IBAction
     @IBAction func didTapOnStarButton(_ sender: Any) {
         addRecipeToFavoriteOrDelete()
     }
@@ -68,6 +72,7 @@ class DetailsViewController: UIViewController {
     }
 }
 
+// MARK: TableView gestion
 extension DetailsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

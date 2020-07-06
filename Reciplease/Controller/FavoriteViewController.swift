@@ -13,19 +13,22 @@ class FavoriteViewController: UIViewController {
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
 
+    // MARK: Properties
     private var name = String()
     private var ingredients = [String]()
     private var time = String()
     private var yield = String()
     private var image = String()
 
+    // MARK: Lyfecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkFavoriteSectionNull()
+        checkIfFavoriteSectionIsNull()
         tableView.reloadData()
     }
 
-    private func checkFavoriteSectionNull() {
+    // MARK: Methods
+    private func checkIfFavoriteSectionIsNull() {
         guard RecipeData.allRecipesData.count > 0 else {
             tableView.isHidden = true
             return
@@ -49,6 +52,7 @@ extension FavoriteViewController {
     }
 }
 
+// MARK: TableView gestion
 extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         name = RecipeData.allRecipesData[indexPath.row].name ?? ""
@@ -68,7 +72,7 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
             try? AppDelegate.viewContext.save()
             print("tab count \(RecipeData.allRecipesData.count)")
             tableView.deleteRows(at: [indexPath], with: .fade)
-            checkFavoriteSectionNull()
+            checkIfFavoriteSectionIsNull()
         }
     }
 
