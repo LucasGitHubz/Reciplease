@@ -48,19 +48,20 @@ class SearchViewController: UIViewController {
             return presentAlert(message: AlertMessage.init().emptyListError)
         }
         let ingredients = ListService.ingredients.joined(separator: ",")
-        RecipeService.init().getRecipeData(userIngredients: ingredients) { (success, completRecipe) in
+        RecipeService.init().getRecipeData(userIngredients: ingredients) { (result) in
             DispatchQueue.main.async {
                 self.toogleActivityIndicator(idIndicator: idIndicator, shown: true)
-                if success {
+                switch result {
+                case .failure(let error):
+                    self.presentAlert(message: error.error)
+                case .success(let completRecipe):
                     self.update(data: completRecipe, completionHandler: { (success) in
                         if success {
                             self.performSegue(withIdentifier: "segueToListVC", sender: self)
                         } else {
-                            return
+                            self.presentAlert(message: AlertMessage.init().programError)
                         }
                     })
-                } else {
-                    self.presentAlert(message: AlertMessage.init().programError)
                 }
             }
         }

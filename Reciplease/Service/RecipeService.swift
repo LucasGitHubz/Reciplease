@@ -28,16 +28,14 @@ class RecipeService {
         return recipeUrl
     }
     // This method returns, if successful, the recipesData to be used in RecipListVC. Else, displays the corresponding error
-    func getRecipeData(userIngredients: String, callBack: @escaping (Bool, FinalRecipe?) -> Void) {
+    func getRecipeData(userIngredients: String, finalResult: @escaping (Result<FinalRecipe, WrapperAPI.AlertError>) -> Void) {
         WrapperAPI.shared.perform(url: getUrlString(userIngredients, appId: appId, appKey: appKey), decode: ResponseRecipe.self) { (result) in
             switch result {
             case .failure(let error):
-                print(error)
-                callBack(false, nil)
+            finalResult(.failure(error))
             case .success(let recipesData):
                 guard recipesData.hits.count > 0 else {
-                    callBack(false, nil)
-                    return
+                    return finalResult(.failure(WrapperAPI.AlertError.init()))
                 }
                 
                 let names = recipesData.hits.compactMap { $0.recipe?.label }
@@ -48,7 +46,7 @@ class RecipeService {
                 
                 let completRecipe = FinalRecipe(name: names, ingredient: ingredients, time: time, yield: yield, image: image)
                 
-                callBack(true, completRecipe)
+                finalResult(.success(completRecipe))
             }
         }
     }
