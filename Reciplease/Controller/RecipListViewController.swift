@@ -8,24 +8,12 @@
 
 import UIKit
 
-class RecipListViewController: UIViewController {
+class RecipListViewController: CustomViewController {
     // MARK: Properties
-    var nameTab = [String]()
-    var ingredientTab = [[String]]()
-    var timeTab = [Double]()
-    var yieldTab = [Double]()
-    var imageTab = [String]()
-
-    private var name = String()
-    private var ingredients = [String]()
-    private var time = String()
-    private var yield = String()
-    private var image = String()
-
+    var datas = Datas()
     // MARK: Lyfecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.setBackButtonTitle()
     }
 }
 
@@ -35,11 +23,11 @@ extension RecipListViewController {
             guard let successVC = segue.destination as? DetailsViewController else {
                 return presentAlert(message: AlertMessage.init().programError)
             }
-            successVC.name = name
-            successVC.ingredients = ingredients
-            successVC.time = time
-            successVC.yield = yield
-            successVC.image = image
+            successVC.datas.name = datas.name
+            successVC.datas.ingredients = datas.ingredients
+            successVC.datas.time = datas.time
+            successVC.datas.yield = datas.yield
+            successVC.datas.image = datas.image
         }
     }
 }
@@ -47,11 +35,11 @@ extension RecipListViewController {
 // MARK: TableView gestion
 extension RecipListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        name = nameTab[indexPath.row]
-        ingredients = ingredientTab[indexPath.row]
-        time = String(timeTab[indexPath.row])
-        yield = String(yieldTab[indexPath.row])
-        image = imageTab[indexPath.row]
+        datas.name = datas.nameTab[indexPath.row]
+        datas.ingredients = datas.ingredientTab[indexPath.row]
+        datas.time = String(datas.timeTab[indexPath.row])
+        datas.yield = String(datas.yieldTab[indexPath.row])
+        datas.image = datas.imageTab[indexPath.row]
 
         performSegue(withIdentifier: "segueToDetailVC", sender: self)
     }
@@ -61,19 +49,19 @@ extension RecipListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nameTab.count
+        return datas.nameTab.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeListTableViewCell else {
             return UITableViewCell()
         }
-        
-        let name = nameTab[indexPath.row]
-        let ingredient = ingredientTab[indexPath.row].joined(separator: ", ")
-        let time = timeTab[indexPath.row]
-        let yield = yieldTab[indexPath.row]
-        let image = imageTab[indexPath.row]
+
+        let name = datas.nameTab[indexPath.row]
+        let ingredient = datas.ingredientTab[indexPath.row].joined(separator: ", ")
+        let time = datas.timeTab[indexPath.row]
+        let yield = datas.yieldTab[indexPath.row]
+        let image = datas.imageTab[indexPath.row]
 
         cell.recipeImageView.downloaded(from: image)
         cell.recipeTitleLabel.text = name

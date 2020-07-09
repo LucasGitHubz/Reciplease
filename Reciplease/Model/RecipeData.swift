@@ -18,13 +18,13 @@ class RecipeData: NSManagedObject {
         return data
     }
     
-    static func saveRecipeData(_ name: String, _ ingredients: [String], _ time: String, _ yield: String, _ image: String) {
+    static func saveRecipeData(datas: Datas) {
         let recipeData = RecipeData(context: AppDelegate.viewContext)
-        recipeData.name = name
-        recipeData.ingredient = ingredients.joined(separator: ", ")
-        recipeData.time = time
-        recipeData.yield = yield
-        recipeData.image = image
+        recipeData.name = datas.name
+        recipeData.ingredient = datas.ingredients.joined(separator: ",  ")
+        recipeData.time = datas.time
+        recipeData.yield = datas.yield
+        recipeData.image = datas.image
         
         try? AppDelegate.viewContext.save()
     }

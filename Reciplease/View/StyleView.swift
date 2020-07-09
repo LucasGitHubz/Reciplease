@@ -13,7 +13,7 @@ class StyleView: UIView {
         super.init(frame: frame)
         setStyle()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setStyle()

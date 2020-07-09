@@ -35,7 +35,7 @@
                     <tabBarItem key="tabBarItem" title="Search" id="TgC-Xm-KNj">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-10"/>
                     </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="1F0-wi-f7L" customClass="CustomNavigationBar" customModule="Reciplease" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="1F0-wi-f7L">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -402,7 +402,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gxL-Ow-Unw"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Reciplease" id="AAw-GK-T5U" customClass="CustomNavItem" customModule="Reciplease" customModuleProvider="target"/>
+                    <navigationItem key="navigationItem" title="Reciplease" id="AAw-GK-T5U"/>
                     <connections>
                         <segue destination="vfj-gF-W9A" kind="show" identifier="segueToDetailVC" id="DfK-vh-wWN"/>
                     </connections>
@@ -610,7 +610,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8J1-9f-dWm"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Reciplease" id="isr-Wk-pmv" customClass="CustomNavItem" customModule="Reciplease" customModuleProvider="target">
+                    <navigationItem key="navigationItem" title="Reciplease" id="isr-Wk-pmv">
                         <barButtonItem key="rightBarButtonItem" id="8wy-VC-yMp">
                             <view key="customView" contentMode="scaleToFill" id="Cmr-HT-5QY">
                                 <rect key="frame" x="344" y="3" width="50" height="38"/>
@@ -677,7 +677,7 @@
                     <tabBarItem key="tabBarItem" title="Favorite" id="73U-N8-bwx">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-10"/>
                     </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="lCd-5B-Ctg" customClass="CustomNavigationBar" customModule="Reciplease" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="lCd-5B-Ctg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -889,7 +889,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gra-4U-fV4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2457.971014492754" y="357.58928571428572"/>
+            <point key="canvasLocation" x="2455" y="358"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

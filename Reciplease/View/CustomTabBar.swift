@@ -13,6 +13,7 @@ class CustomTabBar: UITabBarController {
         super.viewDidLoad()
         setDesign()
     }
+
     func setDesign() {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 20) as Any], for: .normal)
     }

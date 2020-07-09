@@ -16,13 +16,9 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var midActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var botActivityIndicator: UIActivityIndicatorView!
-    
+
     // MARK: Properties
-    private var nameTab = [String]()
-    private var ingredientTab = [[String]]()
-    private var timeTab = [Double]()
-    private var yieldTab = [Double]()
-    private var imageTab = [String]()
+    private var datas = Datas()
 
     // MARK: Methods
     private func toogleActivityIndicator(idIndicator: Int, shown: Bool) {
@@ -76,11 +72,11 @@ class SearchViewController: UIViewController {
             return
         }
 
-        nameTab = recipesData.name
-        ingredientTab = recipesData.ingredient
-        timeTab = recipesData.time
-        yieldTab = recipesData.yield
-        imageTab = recipesData.image
+        datas.nameTab = recipesData.name
+        datas.ingredientTab = recipesData.ingredient
+        datas.timeTab = recipesData.time
+        datas.yieldTab = recipesData.yield
+        datas.imageTab = recipesData.image
         completionHandler(true)
     }
    
@@ -110,11 +106,11 @@ extension SearchViewController {
                 return presentAlert(message: AlertMessage.init().programError)
             }
 
-            successVC.nameTab = nameTab
-            successVC.ingredientTab = ingredientTab
-            successVC.timeTab = timeTab
-            successVC.yieldTab = yieldTab
-            successVC.imageTab = imageTab
+            successVC.datas.nameTab = datas.nameTab
+            successVC.datas.ingredientTab = datas.ingredientTab
+            successVC.datas.timeTab = datas.timeTab
+            successVC.datas.yieldTab = datas.yieldTab
+            successVC.datas.imageTab = datas.imageTab
         }
     }
 }

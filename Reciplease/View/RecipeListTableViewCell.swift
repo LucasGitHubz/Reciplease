@@ -14,4 +14,8 @@ class RecipeListTableViewCell: UITableViewCell {
     @IBOutlet weak var ingredientsLabel: UILabel!
     @IBOutlet weak var yieldLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
 }

@@ -9,16 +9,12 @@
 import UIKit
 import CoreData
 
-class FavoriteViewController: UIViewController {
+class FavoriteViewController: CustomViewController {
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: Properties
-    private var name = String()
-    private var ingredients = [String]()
-    private var time = String()
-    private var yield = String()
-    private var image = String()
+    private var datas = Datas()
 
     // MARK: Lyfecycle
     override func viewWillAppear(_ animated: Bool) {
@@ -43,11 +39,11 @@ extension FavoriteViewController {
             guard let successVC = segue.destination as? DetailsViewController else {
                 return presentAlert(message: AlertMessage.init().programError)
             }
-            successVC.name = name
-            successVC.ingredients = ingredients
-            successVC.time = time
-            successVC.yield = yield
-            successVC.image = image
+            successVC.datas.name = datas.name
+            successVC.datas.ingredients = datas.ingredients
+            successVC.datas.time = datas.time
+            successVC.datas.yield = datas.yield
+            successVC.datas.image = datas.image
         }
     }
 }
@@ -55,12 +51,12 @@ extension FavoriteViewController {
 // MARK: TableView gestion
 extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        name = RecipeData.allRecipesData[indexPath.row].name ?? ""
+        datas.name = RecipeData.allRecipesData[indexPath.row].name ?? ""
         let ingredientsLine = RecipeData.allRecipesData[indexPath.row].ingredient ?? ""
-        ingredients = ingredientsLine.components(separatedBy: ", ")
-        time = RecipeData.allRecipesData[indexPath.row].time ?? ""
-        yield = RecipeData.allRecipesData[indexPath.row].yield ?? ""
-        image = RecipeData.allRecipesData[indexPath.row].image ?? ""
+        datas.ingredients = ingredientsLine.components(separatedBy: ",  ")
+        datas.time = RecipeData.allRecipesData[indexPath.row].time ?? ""
+        datas.yield = RecipeData.allRecipesData[indexPath.row].yield ?? ""
+        datas.image = RecipeData.allRecipesData[indexPath.row].image ?? ""
 
         performSegue(withIdentifier: "segueToDetailVC", sender: self)
     }
