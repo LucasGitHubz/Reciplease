@@ -9,12 +9,8 @@
 import UIKit
 
 class RecipeListTableViewCell: UITableViewCell {
-    @IBOutlet weak var recipeImageView: UIImageView!
-    @IBOutlet weak var recipeTitleLabel: UILabel!
-    @IBOutlet weak var ingredientsLabel: UILabel!
-    @IBOutlet weak var yieldLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-
+    @IBOutlet weak var view: UIView!
+    
     override func prepareForReuse() {
         super.prepareForReuse()
     }

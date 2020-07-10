@@ -23,6 +23,7 @@ extension RecipListViewController {
             guard let successVC = segue.destination as? DetailsViewController else {
                 return presentAlert(message: AlertMessage.init().programError)
             }
+
             successVC.datas.name = datas.name
             successVC.datas.ingredients = datas.ingredients
             successVC.datas.time = datas.time
@@ -62,12 +63,14 @@ extension RecipListViewController: UITableViewDataSource, UITableViewDelegate {
         let time = datas.timeTab[indexPath.row]
         let yield = datas.yieldTab[indexPath.row]
         let image = datas.imageTab[indexPath.row]
+        let view = CellView.loadFromNib()
 
-        cell.recipeImageView.downloaded(from: image)
-        cell.recipeTitleLabel.text = name
-        cell.ingredientsLabel.text = ingredient
-        cell.timeLabel.text = "\(time) min"
-        cell.yieldLabel.text = String(yield)
+        view .recipeName.text = name
+        view .recipeIngredient.text = ingredient
+        view .recipeTime.text = "\(time) min"
+        view .recipeYield.text = String(yield)
+        view .recipeImage.downloaded(from: image)
+        cell.view.addSubview(view)
 
         return cell
     }

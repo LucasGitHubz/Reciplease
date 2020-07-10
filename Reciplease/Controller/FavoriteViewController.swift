@@ -91,11 +91,14 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         let yield = RecipeData.allRecipesData[indexPath.row].yield
         let image = RecipeData.allRecipesData[indexPath.row].image ?? "botCellShadow"
 
-        cell.recipeTitleLabel.text = name
-        cell.ingredientsLabel.text = ingredient
-        cell.timeLabel.text = "\(time ?? "0") min"
-        cell.yieldLabel.text = String(yield ?? "0")
-        cell.recipeImageView.downloaded(from: image)
+        let view = CellView.loadFromNib()
+        view.recipeName.text = name
+        view.recipeIngredient.text = ingredient
+        view.recipeTime.text = "\(time ?? "0") min"
+        view.recipeYield.text = String(yield ?? "0")
+        view.recipeImage.downloaded(from: image)
+
+        cell.view.addSubview(view)
 
         return cell
     }
