@@ -9,6 +9,7 @@
 import UIKit
 
 class RecipListViewController: CustomViewController {
+    @IBOutlet weak var tableView: UITableView!
     // MARK: Properties
     var datas = Datas()
     // MARK: Lyfecycle
@@ -54,23 +55,20 @@ extension RecipListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeListTableViewCell else {
-            return UITableViewCell()
-        }
+        tableView.register(cellType: CellView.self)
+        let cell: CellView = tableView.dequeueReusableCell(for: indexPath)
 
         let name = datas.nameTab[indexPath.row]
         let ingredient = datas.ingredientTab[indexPath.row].joined(separator: ", ")
         let time = datas.timeTab[indexPath.row]
         let yield = datas.yieldTab[indexPath.row]
         let image = datas.imageTab[indexPath.row]
-        let view = CellView.loadFromNib()
 
-        view .recipeName.text = name
-        view .recipeIngredient.text = ingredient
-        view .recipeTime.text = "\(time) min"
-        view .recipeYield.text = String(yield)
-        view .recipeImage.downloaded(from: image)
-        cell.view.addSubview(view)
+        cell.recipeName.text = name
+        cell.recipeIngredient.text = ingredient
+        cell.recipeTime.text = "\(time) min"
+        cell.recipeYield.text = String(yield)
+        cell.recipeImage.downloaded(from: image)
 
         return cell
     }

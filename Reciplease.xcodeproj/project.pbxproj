@@ -13,12 +13,11 @@
 		C60FCB7C24AF785100992482 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60FCB7B24AF785100992482 /* RecipeData.swift */; };
 		C60FEE7024A5FF9B00581FDA /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60FEE6F24A5FF9B00581FDA /* CustomTabBar.swift */; };
 		C61E1F0324B2180900F9BB34 /* ListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61E1F0224B2180900F9BB34 /* ListServiceTests.swift */; };
-		C623275524AC8854003AC667 /* RecipeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C623275424AC8854003AC667 /* RecipeListTableViewCell.swift */; };
+		C623275524AC8854003AC667 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C623275424AC8854003AC667 /* CellView.swift */; };
 		C623275724ACA1E0003AC667 /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C623275624ACA1E0003AC667 /* UIImageView+extension.swift */; };
 		C637382524AA45C4006932B9 /* WrapperAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637382424AA45C4006932B9 /* WrapperAPI.swift */; };
 		C637382724AA468F006932B9 /* RecipeCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637382624AA468F006932B9 /* RecipeCodable.swift */; };
 		C637382924AA7CDD006932B9 /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637382824AA7CDD006932B9 /* RecipeService.swift */; };
-		C641320324B7B1BC00032FB3 /* reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C641320224B7B1BC00032FB3 /* reusable.swift */; };
 		C65359F324AF72BB0066B660 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C65359F124AF72BB0066B660 /* Reciplease.xcdatamodeld */; };
 		C65A8EF624B717D700927062 /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65A8EF524B717D700927062 /* Datas.swift */; };
 		C677FC8824ADFE2900C5B275 /* StyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677FC8724ADFE2900C5B275 /* StyleView.swift */; };
@@ -38,7 +37,6 @@
 		C692371624A0D21700B11A98 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692371524A0D21700B11A98 /* InstructionsViewController.swift */; };
 		C6B8394E24AE5F7D000CF2E9 /* UINavigationBar+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8394D24AE5F7D000CF2E9 /* UINavigationBar+extension.swift */; };
 		C6D1195424B89D1600D00707 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6D1195324B89D1600D00707 /* CellView.xib */; };
-		C6D1195624B89D2A00D00707 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D1195524B89D2A00D00707 /* CellView.swift */; };
 		C6D4440C24A26DC3008DBEA4 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4440B24A26DC3008DBEA4 /* CustomButton.swift */; };
 		C6D4440E24A26F22008DBEA4 /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4440D24A26F22008DBEA4 /* ListService.swift */; };
 		C6F4FB7A24A5EF2500891C6D /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F4FB7924A5EF2500891C6D /* ListTableViewCell.swift */; };
@@ -73,12 +71,11 @@
 		C60FCB7B24AF785100992482 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
 		C60FEE6F24A5FF9B00581FDA /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		C61E1F0224B2180900F9BB34 /* ListServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServiceTests.swift; sourceTree = "<group>"; };
-		C623275424AC8854003AC667 /* RecipeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTableViewCell.swift; sourceTree = "<group>"; };
+		C623275424AC8854003AC667 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		C623275624ACA1E0003AC667 /* UIImageView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
 		C637382424AA45C4006932B9 /* WrapperAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperAPI.swift; sourceTree = "<group>"; };
 		C637382624AA468F006932B9 /* RecipeCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCodable.swift; sourceTree = "<group>"; };
 		C637382824AA7CDD006932B9 /* RecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeService.swift; sourceTree = "<group>"; };
-		C641320224B7B1BC00032FB3 /* reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reusable.swift; sourceTree = "<group>"; };
 		C6508D17B42E116599E7CE9C /* Pods-Reciplease-RecipleaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease-RecipleaseUITests.release.xcconfig"; path = "Target Support Files/Pods-Reciplease-RecipleaseUITests/Pods-Reciplease-RecipleaseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C65359F224AF72BB0066B660 /* Reciplease.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reciplease.xcdatamodel; sourceTree = "<group>"; };
 		C65A8EF524B717D700927062 /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
@@ -105,7 +102,6 @@
 		C692371524A0D21700B11A98 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		C6B8394D24AE5F7D000CF2E9 /* UINavigationBar+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+extension.swift"; sourceTree = "<group>"; };
 		C6D1195324B89D1600D00707 /* CellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
-		C6D1195524B89D2A00D00707 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		C6D4440B24A26DC3008DBEA4 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C6D4440D24A26F22008DBEA4 /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
 		C6F4FB7924A5EF2500891C6D /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
@@ -175,14 +171,6 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		C641320124B7B1B000032FB3 /* Library OS */ = {
-			isa = PBXGroup;
-			children = (
-				C641320224B7B1BC00032FB3 /* reusable.swift */,
-			);
-			path = "Library OS";
-			sourceTree = "<group>";
-		};
 		C69236CE24A0AE6E00B11A98 = {
 			isa = PBXGroup;
 			children = (
@@ -208,7 +196,6 @@
 		C69236D924A0AE6E00B11A98 /* Reciplease */ = {
 			isa = PBXGroup;
 			children = (
-				C641320124B7B1B000032FB3 /* Library OS */,
 				C637382324AA452C006932B9 /* Service */,
 				C692370C24A0CF6800B11A98 /* Model */,
 				C692370B24A0CF6400B11A98 /* View */,
@@ -262,12 +249,11 @@
 			children = (
 				C69236E024A0AE6E00B11A98 /* Main.storyboard */,
 				C6D1195324B89D1600D00707 /* CellView.xib */,
-				C6D1195524B89D2A00D00707 /* CellView.swift */,
+				C623275424AC8854003AC667 /* CellView.swift */,
 				C6D4440B24A26DC3008DBEA4 /* CustomButton.swift */,
 				C6F4FB7B24A5F6DD00891C6D /* CustomTextField.swift */,
 				C60FEE6F24A5FF9B00581FDA /* CustomTabBar.swift */,
 				C6F4FB7924A5EF2500891C6D /* ListTableViewCell.swift */,
-				C623275424AC8854003AC667 /* RecipeListTableViewCell.swift */,
 				C677FC8724ADFE2900C5B275 /* StyleView.swift */,
 				C6FFBE8D24B611610088940F /* CustomViewController.swift */,
 			);
@@ -567,10 +553,9 @@
 				C6D4440E24A26F22008DBEA4 /* ListService.swift in Sources */,
 				C6FFBE8E24B611610088940F /* CustomViewController.swift in Sources */,
 				C6F4FB7C24A5F6DD00891C6D /* CustomTextField.swift in Sources */,
-				C641320324B7B1BC00032FB3 /* reusable.swift in Sources */,
 				C623275724ACA1E0003AC667 /* UIImageView+extension.swift in Sources */,
 				C65359F324AF72BB0066B660 /* Reciplease.xcdatamodeld in Sources */,
-				C623275524AC8854003AC667 /* RecipeListTableViewCell.swift in Sources */,
+				C623275524AC8854003AC667 /* CellView.swift in Sources */,
 				C692370E24A0CF8300B11A98 /* SearchViewController.swift in Sources */,
 				C60FEE7024A5FF9B00581FDA /* CustomTabBar.swift in Sources */,
 				C69236DB24A0AE6E00B11A98 /* AppDelegate.swift in Sources */,
@@ -585,7 +570,6 @@
 				C6F4FB7F24A5FB4D00891C6D /* UIViewController+extension.swift in Sources */,
 				C65A8EF624B717D700927062 /* Datas.swift in Sources */,
 				C692371624A0D21700B11A98 /* InstructionsViewController.swift in Sources */,
-				C6D1195624B89D2A00D00707 /* CellView.swift in Sources */,
 				C60FCB7C24AF785100992482 /* RecipeData.swift in Sources */,
 				C692371424A0D20A00B11A98 /* DetailsViewController.swift in Sources */,
 				C6F4FB7A24A5EF2500891C6D /* ListTableViewCell.swift in Sources */,

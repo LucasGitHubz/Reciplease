@@ -66,7 +66,6 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
             AppDelegate.viewContext.delete(RecipeData.allRecipesData[indexPath.row])
 
             try? AppDelegate.viewContext.save()
-            print("tab count \(RecipeData.allRecipesData.count)")
             tableView.deleteRows(at: [indexPath], with: .fade)
             checkIfFavoriteSectionIsNull()
         }
@@ -81,9 +80,8 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteCell", for: indexPath) as? RecipeListTableViewCell else {
-            return UITableViewCell()
-        }
+        tableView.register(cellType: CellView.self)
+        let cell: CellView = tableView.dequeueReusableCell(for: indexPath)
 
         let name = RecipeData.allRecipesData[indexPath.row].name
         let ingredient = RecipeData.allRecipesData[indexPath.row].ingredient
@@ -91,14 +89,11 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         let yield = RecipeData.allRecipesData[indexPath.row].yield
         let image = RecipeData.allRecipesData[indexPath.row].image ?? "botCellShadow"
 
-        let view = CellView.loadFromNib()
-        view.recipeName.text = name
-        view.recipeIngredient.text = ingredient
-        view.recipeTime.text = "\(time ?? "0") min"
-        view.recipeYield.text = String(yield ?? "0")
-        view.recipeImage.downloaded(from: image)
-
-        cell.view.addSubview(view)
+        cell.recipeName.text = name
+        cell.recipeIngredient.text = ingredient
+        cell.recipeTime.text = "\(time ?? "0") min"
+        cell.recipeYield.text = String(yield ?? "0")
+        cell.recipeImage.downloaded(from: image)
 
         return cell
     }
