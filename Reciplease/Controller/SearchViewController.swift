@@ -55,7 +55,7 @@ class SearchViewController: UIViewController {
                 case .failure(let error):
                     self.presentAlert(message: error.error)
                 case .success(let completRecipe):
-                    self.update(data: completRecipe, completionHandler: { (success) in
+                    self.update(userIngredients: ingredients, data: completRecipe, completionHandler: { (success) in
                         if success {
                             self.performSegue(withIdentifier: "segueToListVC", sender: self)
                         } else {
@@ -67,7 +67,7 @@ class SearchViewController: UIViewController {
         }
     }
 
-    private func update(data: FinalRecipe?, completionHandler: (Bool) -> Void) {
+    private func update(userIngredients: String, data: FinalRecipe?, completionHandler: (Bool) -> Void) {
         guard let recipesData = data else {
             presentAlert(message: AlertMessage.init().programError)
             return
@@ -78,6 +78,8 @@ class SearchViewController: UIViewController {
         datas.timeTab = recipesData.time
         datas.yieldTab = recipesData.yield
         datas.imageTab = recipesData.image
+        datas.userIngredients = userIngredients
+
         completionHandler(true)
     }
    
@@ -112,6 +114,7 @@ extension SearchViewController {
             successVC.datas.timeTab = datas.timeTab
             successVC.datas.yieldTab = datas.yieldTab
             successVC.datas.imageTab = datas.imageTab
+            successVC.datas.userIngredients = datas.userIngredients
         }
     }
 }

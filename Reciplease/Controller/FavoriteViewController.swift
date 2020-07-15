@@ -12,18 +12,25 @@ import CoreData
 class FavoriteViewController: CustomViewController {
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     // MARK: Properties
     private var datas = Datas()
 
     // MARK: Lyfecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        toogleActivityIndicator(shown: false)
         checkIfFavoriteSectionIsNull()
         tableView.reloadData()
+        toogleActivityIndicator(shown: true)
     }
 
     // MARK: Methods
+    private func toogleActivityIndicator(shown: Bool) {
+            activityIndicator.isHidden = shown
+    }
+
     private func checkIfFavoriteSectionIsNull() {
         guard RecipeData.allRecipesData.count > 0 else {
             tableView.isHidden = true
@@ -63,11 +70,13 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            toogleActivityIndicator(shown: false)
             AppDelegate.viewContext.delete(RecipeData.allRecipesData[indexPath.row])
 
             try? AppDelegate.viewContext.save()
             tableView.deleteRows(at: [indexPath], with: .fade)
             checkIfFavoriteSectionIsNull()
+            toogleActivityIndicator(shown: true)
         }
     }
 

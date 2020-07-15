@@ -14,6 +14,7 @@ class DetailsViewController: CustomViewController {
         let green = #colorLiteral(red: 0.2358415127, green: 0.5858561397, blue: 0.3734640479, alpha: 1)
     }
     // MARK: Outlets
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var yieldLabel: UILabel!
@@ -40,6 +41,12 @@ class DetailsViewController: CustomViewController {
     }
     
     // MARK: Methods
+    private func toogleActivityIndicator(shown: Bool) {
+            getDirectionButton.isHidden = !shown
+            starImage.isHidden = !shown
+            activityIndicator.isHidden = shown
+    }
+
     private func checkIfRecipeAlreadyAddedToFavorite(_ name: String) {
         // If allRecipesData is empty, then starImage's color pass to grey
         guard RecipeData.allRecipesData.count > 0 else {
@@ -64,7 +71,9 @@ class DetailsViewController: CustomViewController {
     
     // MARK: IBAction
     @IBAction func didTapOnStarButton(_ sender: Any) {
+        toogleActivityIndicator(shown: false)
         addRecipeToFavoriteOrDelete()
+        toogleActivityIndicator(shown: true)
     }
     
     @IBAction func didTapGetDirectionButton(_ sender: Any) {

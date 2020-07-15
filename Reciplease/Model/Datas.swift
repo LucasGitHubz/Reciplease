@@ -15,6 +15,7 @@ struct Datas {
     var yieldTab = [Double]()
     var imageTab = [String]()
 
+    var userIngredients = String()
     var name = String()
     var ingredients = [String]()
     var time = String()

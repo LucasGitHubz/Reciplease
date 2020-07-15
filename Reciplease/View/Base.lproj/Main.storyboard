@@ -255,6 +255,7 @@
                                 <connections>
                                     <outlet property="dataSource" destination="775-WH-Ljv" id="d6T-Tx-ZQu"/>
                                     <outlet property="delegate" destination="775-WH-Ljv" id="bai-gS-ZXu"/>
+                                    <outlet property="prefetchDataSource" destination="775-WH-Ljv" id="Fwv-oF-O59"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -285,6 +286,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="WXC-XZ-zYq">
+                                <rect key="frame" x="188.5" y="344" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="tQh-KZ-Ocm">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="648"/>
                                 <subviews>
@@ -469,7 +474,9 @@
                             <constraint firstItem="aZa-S7-BFF" firstAttribute="leading" secondItem="8J1-9f-dWm" secondAttribute="leading" constant="40" id="4l5-EW-LGu"/>
                             <constraint firstItem="tQh-KZ-Ocm" firstAttribute="top" secondItem="8J1-9f-dWm" secondAttribute="top" id="CoK-UO-U26"/>
                             <constraint firstItem="tQh-KZ-Ocm" firstAttribute="leading" secondItem="8J1-9f-dWm" secondAttribute="leading" id="FZb-GV-6yJ"/>
+                            <constraint firstItem="WXC-XZ-zYq" firstAttribute="centerX" secondItem="oqC-gh-ni5" secondAttribute="centerX" id="J1W-4A-8fj"/>
                             <constraint firstItem="8J1-9f-dWm" firstAttribute="trailing" secondItem="aZa-S7-BFF" secondAttribute="trailing" constant="40" id="NOA-UC-ara"/>
+                            <constraint firstItem="WXC-XZ-zYq" firstAttribute="centerY" secondItem="oqC-gh-ni5" secondAttribute="centerY" id="SvC-kH-RFo"/>
                             <constraint firstItem="tQh-KZ-Ocm" firstAttribute="trailing" secondItem="8J1-9f-dWm" secondAttribute="trailing" id="Z6s-hS-phQ"/>
                             <constraint firstItem="aZa-S7-BFF" firstAttribute="bottom" secondItem="8J1-9f-dWm" secondAttribute="bottom" id="fyf-iY-Dwu"/>
                             <constraint firstItem="aZa-S7-BFF" firstAttribute="top" secondItem="tQh-KZ-Ocm" secondAttribute="bottom" constant="8" id="t6J-Pg-Mmy"/>
@@ -507,6 +514,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="WXC-XZ-zYq" id="zfY-3d-mGM"/>
                         <outlet property="getDirectionButton" destination="aZa-S7-BFF" id="Mlk-JD-KHv"/>
                         <outlet property="recipeImageView" destination="n0P-0a-PcE" id="gKh-lp-939"/>
                         <outlet property="recipeTitleLabel" destination="b8G-ma-ziR" id="h4H-DL-UG4"/>
@@ -571,6 +579,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="68e-Y3-nbP">
+                                <rect key="frame" x="188.5" y="344" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aucun élément ajouté aux favoris !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQY-Nd-WEH">
                                 <rect key="frame" x="48.5" y="20" width="317.5" height="129"/>
                                 <constraints>
@@ -605,22 +617,25 @@
                             <constraint firstItem="bSx-uR-z9E" firstAttribute="top" secondItem="dQY-Nd-WEH" secondAttribute="bottom" id="Qps-OB-qq7"/>
                             <constraint firstItem="TgA-72-ngj" firstAttribute="leading" secondItem="JQh-dL-S5U" secondAttribute="leading" id="UP7-TK-58q"/>
                             <constraint firstItem="TgA-72-ngj" firstAttribute="trailing" secondItem="JQh-dL-S5U" secondAttribute="trailing" id="X1e-Lf-MdY"/>
+                            <constraint firstItem="68e-Y3-nbP" firstAttribute="centerX" secondItem="vmb-cY-WxI" secondAttribute="centerX" id="Xse-LC-qYD"/>
                             <constraint firstItem="TgA-72-ngj" firstAttribute="top" secondItem="JQh-dL-S5U" secondAttribute="top" id="Y9G-xR-ryz"/>
                             <constraint firstItem="JQh-dL-S5U" firstAttribute="trailing" secondItem="bSx-uR-z9E" secondAttribute="trailing" id="Z68-Dk-hYL"/>
                             <constraint firstItem="dQY-Nd-WEH" firstAttribute="centerX" secondItem="vmb-cY-WxI" secondAttribute="centerX" id="m7R-aG-zHx"/>
+                            <constraint firstItem="68e-Y3-nbP" firstAttribute="centerY" secondItem="vmb-cY-WxI" secondAttribute="centerY" id="nMw-22-bkT"/>
                             <constraint firstItem="TgA-72-ngj" firstAttribute="bottom" secondItem="JQh-dL-S5U" secondAttribute="bottom" id="sd9-9B-dJ0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JQh-dL-S5U"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reciplease" id="sfj-vk-n5k"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="68e-Y3-nbP" id="9eN-Y4-XED"/>
                         <outlet property="tableView" destination="TgA-72-ngj" id="liy-bI-8lV"/>
                         <segue destination="vfj-gF-W9A" kind="show" identifier="segueToDetailVC" id="ngS-iO-vwl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gra-4U-fV4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2455" y="358"/>
+            <point key="canvasLocation" x="2453.6231884057975" y="357.58928571428572"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

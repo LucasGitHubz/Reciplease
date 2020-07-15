@@ -19,5 +19,9 @@ class CellView: UITableViewCell, NibReusable {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        recipeName.text = ""
+        recipeIngredient.text = ""
+        recipeTime.text = ""
+        recipeYield.text = ""
     }
 }

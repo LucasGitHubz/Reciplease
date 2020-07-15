@@ -23,7 +23,7 @@ class RecipeService {
             return ""
         }
 
-        let recipeUrl = "https://api.edamam.com/search?app_id=\(appId)&app_key=\(appKey)&q=\(userIngredients)"
+        let recipeUrl = "https://api.edamam.com/search?app_id=\(appId)&app_key=\(appKey)&q=\(userIngredients)&to=100"
         
         return recipeUrl
     }
