@@ -19,21 +19,39 @@ class RecipeServiceTests: XCTestCase {
 
     func testGetRecipeDataShouldPostFailedCallbackIfNoIngredients() {
         let expectation = XCTestExpectation(description: "wait for queue change.")
-        recipeService.getRecipeData(userIngredients: "", callBack: { (success, completRecipe) in
-            XCTAssertFalse(success)
-            XCTAssertNil(completRecipe)
+        let urlDatas = URLData(appId: Bundle.main.object(forInfoDictionaryKey: "AppId") as? String, appKey: Bundle.main.object(forInfoDictionaryKey: "AppKey") as? String, from: 0, to: 50)
+
+        recipeService.getRecipeData(url: URLSetter.getUrlString(userIngredients: "", urlDatas)) { (result) in
+            switch result {
+            case .failure(let error):
+                XCTAssertNotNil(error)
+            case .success(let completRecipe):
+                XCTAssertNil(completRecipe)
+            }
             expectation.fulfill()
-        })
+        }
         wait(for: [expectation], timeout: 5)
     }
 
-    func testGetRecipeDataShouldSuccessCallbackIfAllIsRight() {
+    func testGetRecipeDataShouldSuccessCallbackIfAllDatasAreGood() {
         let expectation = XCTestExpectation(description: "wait for queue change.")
-        recipeService.getRecipeData(userIngredients: "chocolate", callBack: { (success, completRecipe) in
-            XCTAssertTrue(success)
-            XCTAssertNotNil(completRecipe)
+        let urlDatas = URLData(appId: Bundle.main.object(forInfoDictionaryKey: "AppId") as? String, appKey: Bundle.main.object(forInfoDictionaryKey: "AppKey") as? String, from: 0, to: 50)
+        
+        ListService.ingredients.removeAll()
+        
+        let ingredient = "Lemon"
+        ListService.ingredients.append(ingredient)
+        let ingredients = ListService.ingredients.joined(separator: ",")
+
+        recipeService.getRecipeData(url: URLSetter.getUrlString(userIngredients: ingredients, urlDatas)) { (result) in
+            switch result {
+            case .failure(let error):
+                XCTAssertNil(error)
+            case .success(let completRecipe):
+                XCTAssertNotNil(completRecipe)
+            }
             expectation.fulfill()
-        })
+        }
         wait(for: [expectation], timeout: 5)
     }
 }

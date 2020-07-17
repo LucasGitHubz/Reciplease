@@ -11,48 +11,53 @@ import XCTest
 
 class WrapperAPITests: XCTestCase {
     var recipeService: RecipeService!
-
+    
     override func setUp() {
         super.setUp()
         recipeService = RecipeService()
     }
-
-    func testPerformFunctionShouldFailedIfWrongIdAndKey() {
-        WrapperAPI.shared.appId = ""
-        WrapperAPI.shared.appKey = ""
+    
+    func testPerformFunctionShouldFailedIfNilAppId() {
         let expectation = XCTestExpectation(description: "wait for queue change.")
-        recipeService.getRecipeData(userIngredients: "chocolate", callBack: { (success, completRecipe)
-            in
-            XCTAssertFalse(success)
-            XCTAssertNil(completRecipe)
+        let urlDatas = URLData(appId: nil, appKey: Bundle.main.object(forInfoDictionaryKey: "AppKey") as? String, from: 0, to: 50)
+        
+        ListService.ingredients.removeAll()
+        
+        let ingredient = "Lemon"
+        ListService.ingredients.append(ingredient)
+        let ingredients = ListService.ingredients.joined(separator: ",")
+        
+        recipeService.getRecipeData(url: URLSetter.getUrlString(userIngredients: ingredients, urlDatas)) { (result) in
+            switch result {
+            case .failure(let error):
+                XCTAssertNotNil(error)
+            case .success(let completRecipe):
+                XCTAssertNil(completRecipe)
+            }
             expectation.fulfill()
-        })
+        }
         wait(for: [expectation], timeout: 5)
     }
-
+    
     func testPerformFunctionShouldFailedIfAppIdValueNil() {
-        WrapperAPI.shared.appId = nil
-        WrapperAPI.shared.appKey = ""
         let expectation = XCTestExpectation(description: "wait for queue change.")
-        recipeService.getRecipeData(userIngredients: "chocolate", callBack: { (success, completRecipe)
-            in
-            XCTAssertFalse(success)
-            XCTAssertNil(completRecipe)
+        let urlDatas = URLData(appId: Bundle.main.object(forInfoDictionaryKey: "AppId") as? String, appKey: nil, from: 0, to: 50)
+        
+        ListService.ingredients.removeAll()
+        
+        let ingredient = "Lemon"
+        ListService.ingredients.append(ingredient)
+        let ingredients = ListService.ingredients.joined(separator: ",")
+        
+        recipeService.getRecipeData(url: URLSetter.getUrlString(userIngredients: ingredients, urlDatas)) { (result) in
+            switch result {
+            case .failure(let error):
+                XCTAssertNotNil(error)
+            case .success(let completRecipe):
+                XCTAssertNil(completRecipe)
+            }
             expectation.fulfill()
-        })
-        wait(for: [expectation], timeout: 5)
-    }
-
-    func testPerformFunctionShouldFailedIfAppKeyValueNil() {
-        WrapperAPI.shared.appId = ""
-        WrapperAPI.shared.appKey = nil
-        let expectation = XCTestExpectation(description: "wait for queue change.")
-        recipeService.getRecipeData(userIngredients: "chocolate", callBack: { (success, completRecipe)
-            in
-            XCTAssertFalse(success)
-            XCTAssertNil(completRecipe)
-            expectation.fulfill()
-        })
+        }
         wait(for: [expectation], timeout: 5)
     }
 }

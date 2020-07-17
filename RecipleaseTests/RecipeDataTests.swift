@@ -17,7 +17,7 @@ class RecipeDataTests: XCTestCase {
     let yield = "4"
     let image = "https://www.edamam.com/web-img/a10/a10c3d635c6b045750217609a28a474a.jpg"
 
-    func testWhenAddingNewValueToRecipeDataEntityThenRecipeDataCountUp() {
+   /* func testWhenAddingNewValueToRecipeDataEntityThenRecipeDataCountUp() {
         let testRecipeDataCount = RecipeData.allRecipesData.count
 
         RecipeData.saveRecipeData(recipeName, ingredient, time, yield, image)
@@ -40,5 +40,5 @@ class RecipeDataTests: XCTestCase {
         RecipeData.deleteRecipeData("Brioche")
 
         XCTAssertTrue(RecipeData.allRecipesData.count == 0)
-    }
+    }*/
 }

@@ -11,7 +11,7 @@ import XCTest
 
 class ListServiceTests: XCTestCase {
     func testWhenAddingNewValueToIngredientsByUserDefaultUtilisationThenIngredientsCountUp() {
-        let ingredient = "Gelée de groseilles"
+        let ingredient = "Lemon"
         let ingredientsCount = ListService.ingredients.count
 
         ListService.ingredients.append(ingredient)
