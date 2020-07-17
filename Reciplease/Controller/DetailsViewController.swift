@@ -77,6 +77,9 @@ class DetailsViewController: CustomViewController {
     }
     
     @IBAction func didTapGetDirectionButton(_ sender: Any) {
+        if let url = URL(string: recipe.url) {
+            UIApplication.shared.open(url)
+        }
     }
 }
 

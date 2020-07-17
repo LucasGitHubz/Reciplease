@@ -14,6 +14,7 @@ struct FinalRecipe {
     var time: [Double]
     var yield: [Double]
     var image: [String]
+    var url: [String]
 }
 
 struct ResponseRecipe: Codable {
@@ -40,6 +41,7 @@ struct Recipe: Codable {
     let yield: Double?
     let ingredients: [Ingredients]?
     let totalTime: Double?
+    let url: String?
 
     enum CodingKeys: String, CodingKey {
         case label = "label"
@@ -47,6 +49,7 @@ struct Recipe: Codable {
         case yield = "yield"
         case ingredients = "ingredients"
         case totalTime = "totalTime"
+        case url = "url"
     }
 
     init(from decoder: Decoder) throws {
@@ -56,6 +59,7 @@ struct Recipe: Codable {
         yield = try values.decodeIfPresent(Double.self, forKey: .yield)
         ingredients = try values.decodeIfPresent([Ingredients].self, forKey: .ingredients)
         totalTime = try values.decodeIfPresent(Double.self, forKey: .totalTime)
+        url = try values.decodeIfPresent(String.self, forKey: .url)
     }
 }
 

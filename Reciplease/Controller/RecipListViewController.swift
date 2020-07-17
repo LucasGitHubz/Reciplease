@@ -19,18 +19,13 @@ class RecipListViewController: CustomViewController {
     func loadNextBach() {
         let urlDatas = URLData(appId: Bundle.main.object(forInfoDictionaryKey: "AppId") as? String, appKey: Bundle.main.object(forInfoDictionaryKey: "AppKey") as? String, from: from, to: to)
         
-        guard ListService.ingredients != [] else {
-            return presentAlert(message: AlertMessage.init().emptyListError)
-        }
-        
-        let ingredients = ListService.ingredients.joined(separator: ",")
-        RecipeService.init().getRecipeData(url: URLSetter.getUrlString(userIngredients: ingredients, urlDatas)) { (result) in
+        RecipeService.init().getRecipeData(url: URLSetter.getUrlString(userIngredients: recipe.userIngredients, urlDatas)) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .failure(let error):
                     self.presentAlert(message: error.error)
                 case .success(let completRecipe):
-                    self.update(userIngredients: ingredients, data: completRecipe, completionHandler: { (success) in
+                    self.update(userIngredients: self.recipe.userIngredients, data: completRecipe, completionHandler: { (success) in
                         if success {
                             self.tableView.reloadData()
                         } else {
@@ -53,6 +48,7 @@ class RecipListViewController: CustomViewController {
         recipe.timeTab.append(contentsOf: recipesData.time.compactMap { $0 })
         recipe.yieldTab.append(contentsOf: recipesData.yield.compactMap { $0 })
         recipe.imageTab.append(contentsOf: recipesData.image.compactMap { $0 })
+        recipe.urlTab.append(contentsOf: recipesData.url.compactMap { $0 })
         
         completionHandler(true)
     }
@@ -78,6 +74,7 @@ extension RecipListViewController: UITableViewDataSource, UITableViewDelegate {
         recipe.time = String(recipe.timeTab[indexPath.row])
         recipe.yield = String(recipe.yieldTab[indexPath.row])
         recipe.image = recipe.imageTab[indexPath.row]
+        recipe.url = recipe.urlTab[indexPath.row]
         
         performSegue(withIdentifier: "segueToDetailVC", sender: self)
     }

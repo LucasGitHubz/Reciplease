@@ -25,8 +25,9 @@ class RecipeService {
                 let yield = recipesData.hits.compactMap { $0.recipe?.yield }
                 let time = recipesData.hits.compactMap { $0.recipe?.totalTime }
                 let image = recipesData.hits.compactMap { $0.recipe?.image }
+                let url = recipesData.hits.compactMap { $0.recipe?.url }
                 
-                let completRecipe = FinalRecipe(name: names, ingredient: ingredients, time: time, yield: yield, image: image)
+                let completRecipe = FinalRecipe(name: names, ingredient: ingredients, time: time, yield: yield, image: image, url: url)
                 
                 finalResult(.success(completRecipe))
             }

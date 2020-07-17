@@ -14,6 +14,7 @@ struct Datas {
     var timeTab = [Double]()
     var yieldTab = [Double]()
     var imageTab = [String]()
+    var urlTab = [String]()
 
     var userIngredients = String()
     var name = String()
@@ -21,4 +22,5 @@ struct Datas {
     var time = String()
     var yield = String()
     var image = String()
+    var url = String()
 }

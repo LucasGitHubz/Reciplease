@@ -16,11 +16,11 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var midActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var botActivityIndicator: UIActivityIndicatorView!
-
+    
     // MARK: Properties
     private var recipe = Datas()
     private let urlDatas = URLData(appId: Bundle.main.object(forInfoDictionaryKey: "AppId") as? String, appKey: Bundle.main.object(forInfoDictionaryKey: "AppKey") as? String, from: 0, to: 50)
-
+    
     // MARK: Methods
     private func toogleActivityIndicator(idIndicator: Int, shown: Bool) {
         if idIndicator == 1 {
@@ -31,7 +31,7 @@ class SearchViewController: UIViewController {
             botActivityIndicator.isHidden = shown
         }
     }
-
+    
     private func addIngredientToList() {
         guard let ingredient = textField.text, textField.text != "" else {
             presentAlert(message: AlertMessage.init().emptyTextFieldError)
@@ -41,22 +41,22 @@ class SearchViewController: UIViewController {
         tableView.reloadData()
         textField.text = ""
     }
-
+    
     private func getRecipe(idIndicator: Int) {
-            toogleActivityIndicator(idIndicator: idIndicator, shown: false)
-            guard ListService.ingredients != [] else {
-                toogleActivityIndicator(idIndicator: idIndicator, shown: true)
-                return presentAlert(message: AlertMessage.init().emptyListError)
-            }
-            let ingredients = ListService.ingredients.joined(separator: ",")
-            RecipeService.init().getRecipeData(url: URLSetter.getUrlString(userIngredients: ingredients, urlDatas)) { (result) in
-                DispatchQueue.main.async {
-                    self.toogleActivityIndicator(idIndicator: idIndicator, shown: true)
-                    switch result {
-                    case .failure(let error):
-                        self.presentAlert(message: error.error)
-                    case .success(let completRecipe):
-                        self.update(userIngredients: ingredients, data: completRecipe, completionHandler: { (success) in
+        toogleActivityIndicator(idIndicator: idIndicator, shown: false)
+        guard ListService.ingredients != [] else {
+            toogleActivityIndicator(idIndicator: idIndicator, shown: true)
+            return presentAlert(message: AlertMessage.init().emptyListError)
+        }
+        let ingredients = ListService.ingredients.joined(separator: ",")
+        RecipeService.init().getRecipeData(url: URLSetter.getUrlString(userIngredients: ingredients, urlDatas)) { (result) in
+            DispatchQueue.main.async {
+                self.toogleActivityIndicator(idIndicator: idIndicator, shown: true)
+                switch result {
+                case .failure(let error):
+                    self.presentAlert(message: error.error)
+                case .success(let completRecipe):
+                    self.update(userIngredients: ingredients, data: completRecipe, completionHandler: { (success) in
                         if success {
                             self.performSegue(withIdentifier: "segueToListVC", sender: self)
                         } else {
@@ -67,23 +67,24 @@ class SearchViewController: UIViewController {
             }
         }
     }
-
+    
     private func update(userIngredients: String, data: FinalRecipe?, completionHandler: (Bool) -> Void) {
-            guard let recipesData = data else {
-                presentAlert(message: AlertMessage.init().programError)
-                return
-            }
-
-            recipe.nameTab = recipesData.name
-            recipe.ingredientTab = recipesData.ingredient
-            recipe.timeTab = recipesData.time
-            recipe.yieldTab = recipesData.yield
-            recipe.imageTab = recipesData.image
-            recipe.userIngredients = userIngredients
+        guard let recipesData = data else {
+            presentAlert(message: AlertMessage.init().programError)
+            return
+        }
+        
+        recipe.nameTab = recipesData.name
+        recipe.ingredientTab = recipesData.ingredient
+        recipe.timeTab = recipesData.time
+        recipe.yieldTab = recipesData.yield
+        recipe.imageTab = recipesData.image
+        recipe.urlTab = recipesData.url
+        recipe.userIngredients = userIngredients
         
         completionHandler(true)
-        }
-   
+    }
+    
     // MARK: IBAction
     @IBAction func didTapAddButton(_ sender: Any) {
         toogleActivityIndicator(idIndicator: 1, shown: false)
@@ -109,7 +110,7 @@ extension SearchViewController {
             guard let successVC = segue.destination as? RecipListViewController else {
                 return presentAlert(message: AlertMessage.init().programError)
             }
-
+            
             successVC.recipe = recipe
         }
     }
