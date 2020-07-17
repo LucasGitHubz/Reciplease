@@ -23,21 +23,21 @@ class DetailsViewController: CustomViewController {
     @IBOutlet weak var starImage: UIImageView!
 
     // MARK: Properties
-    var datas = Datas()
+    var recipe = Datas()
     
     // MARK: Lyfecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkIfRecipeAlreadyAddedToFavorite(datas.name)
-        recipeTitleLabel.text = datas.name
-        timeLabel.text = "\(datas.time) min"
-        yieldLabel.text = datas.yield
-        recipeImageView.downloaded(from: datas.image)
+        checkIfRecipeAlreadyAddedToFavorite(recipe.name)
+        recipeTitleLabel.text = recipe.name
+        timeLabel.text = "\(recipe.time) min"
+        yieldLabel.text = recipe.yield
+        recipeImageView.downloaded(from: recipe.image)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkIfRecipeAlreadyAddedToFavorite(datas.name)
+        checkIfRecipeAlreadyAddedToFavorite(recipe.name)
     }
     
     // MARK: Methods
@@ -61,10 +61,10 @@ class DetailsViewController: CustomViewController {
     
     private func addRecipeToFavoriteOrDelete() {
         if starImage.tintColor == StarItemColor.init().green {
-            RecipeData.deleteRecipeData(datas.name)
+            RecipeData.deleteRecipeData(recipe.name)
             starImage.tintColor = StarItemColor.init().grey
         } else {
-            RecipeData.saveRecipeData(datas: datas)
+            RecipeData.saveRecipeData(datas: recipe)
             starImage.tintColor = StarItemColor.init().green
         }
     }
@@ -87,7 +87,7 @@ extension DetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return datas.ingredients.count
+        return recipe.ingredients.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,7 +95,7 @@ extension DetailsViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let ingredient = datas.ingredients[indexPath.row]
+        let ingredient = recipe.ingredients[indexPath.row]
         
         cell.ingredientLabel.text = "- \(ingredient)"
         

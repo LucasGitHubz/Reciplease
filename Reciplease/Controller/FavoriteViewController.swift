@@ -15,7 +15,7 @@ class FavoriteViewController: CustomViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: Properties
-    private var datas = Datas()
+    private var recipe = Datas()
 
     // MARK: Lyfecycle
     override func viewWillAppear(_ animated: Bool) {
@@ -46,11 +46,11 @@ extension FavoriteViewController {
             guard let successVC = segue.destination as? DetailsViewController else {
                 return presentAlert(message: AlertMessage.init().programError)
             }
-            successVC.datas.name = datas.name
-            successVC.datas.ingredients = datas.ingredients
-            successVC.datas.time = datas.time
-            successVC.datas.yield = datas.yield
-            successVC.datas.image = datas.image
+            successVC.recipe.name = recipe.name
+            successVC.recipe.ingredients = recipe.ingredients
+            successVC.recipe.time = recipe.time
+            successVC.recipe.yield = recipe.yield
+            successVC.recipe.image = recipe.image
         }
     }
 }
@@ -58,12 +58,12 @@ extension FavoriteViewController {
 // MARK: TableView gestion
 extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        datas.name = RecipeData.allRecipesData[indexPath.row].name ?? ""
+        recipe.name = RecipeData.allRecipesData[indexPath.row].name ?? ""
         let ingredientsLine = RecipeData.allRecipesData[indexPath.row].ingredient ?? ""
-        datas.ingredients = ingredientsLine.components(separatedBy: ",  ")
-        datas.time = RecipeData.allRecipesData[indexPath.row].time ?? ""
-        datas.yield = RecipeData.allRecipesData[indexPath.row].yield ?? ""
-        datas.image = RecipeData.allRecipesData[indexPath.row].image ?? ""
+        recipe.ingredients = ingredientsLine.components(separatedBy: ",  ")
+        recipe.time = RecipeData.allRecipesData[indexPath.row].time ?? ""
+        recipe.yield = RecipeData.allRecipesData[indexPath.row].yield ?? ""
+        recipe.image = RecipeData.allRecipesData[indexPath.row].image ?? ""
 
         performSegue(withIdentifier: "segueToDetailVC", sender: self)
     }

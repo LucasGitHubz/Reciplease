@@ -18,7 +18,8 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var botActivityIndicator: UIActivityIndicatorView!
 
     // MARK: Properties
-    private var datas = Datas()
+    private var recipe = Datas()
+    private let urlDatas = URLData(appId: Bundle.main.object(forInfoDictionaryKey: "AppId") as? String, appKey: Bundle.main.object(forInfoDictionaryKey: "AppKey") as? String, from: 0, to: 50)
 
     // MARK: Methods
     private func toogleActivityIndicator(idIndicator: Int, shown: Bool) {
@@ -42,20 +43,20 @@ class SearchViewController: UIViewController {
     }
 
     private func getRecipe(idIndicator: Int) {
-        toogleActivityIndicator(idIndicator: idIndicator, shown: false)
-        guard ListService.ingredients != [] else {
-            toogleActivityIndicator(idIndicator: idIndicator, shown: true)
-            return presentAlert(message: AlertMessage.init().emptyListError)
-        }
-        let ingredients = ListService.ingredients.joined(separator: ",")
-        RecipeService.init().getRecipeData(userIngredients: ingredients) { (result) in
-            DispatchQueue.main.async {
-                self.toogleActivityIndicator(idIndicator: idIndicator, shown: true)
-                switch result {
-                case .failure(let error):
-                    self.presentAlert(message: error.error)
-                case .success(let completRecipe):
-                    self.update(userIngredients: ingredients, data: completRecipe, completionHandler: { (success) in
+            toogleActivityIndicator(idIndicator: idIndicator, shown: false)
+            guard ListService.ingredients != [] else {
+                toogleActivityIndicator(idIndicator: idIndicator, shown: true)
+                return presentAlert(message: AlertMessage.init().emptyListError)
+            }
+            let ingredients = ListService.ingredients.joined(separator: ",")
+            RecipeService.init().getRecipeData(url: URLSetter.getUrlString(userIngredients: ingredients, urlDatas)) { (result) in
+                DispatchQueue.main.async {
+                    self.toogleActivityIndicator(idIndicator: idIndicator, shown: true)
+                    switch result {
+                    case .failure(let error):
+                        self.presentAlert(message: error.error)
+                    case .success(let completRecipe):
+                        self.update(userIngredients: ingredients, data: completRecipe, completionHandler: { (success) in
                         if success {
                             self.performSegue(withIdentifier: "segueToListVC", sender: self)
                         } else {
@@ -68,20 +69,20 @@ class SearchViewController: UIViewController {
     }
 
     private func update(userIngredients: String, data: FinalRecipe?, completionHandler: (Bool) -> Void) {
-        guard let recipesData = data else {
-            presentAlert(message: AlertMessage.init().programError)
-            return
-        }
+            guard let recipesData = data else {
+                presentAlert(message: AlertMessage.init().programError)
+                return
+            }
 
-        datas.nameTab = recipesData.name
-        datas.ingredientTab = recipesData.ingredient
-        datas.timeTab = recipesData.time
-        datas.yieldTab = recipesData.yield
-        datas.imageTab = recipesData.image
-        datas.userIngredients = userIngredients
-
+            recipe.nameTab = recipesData.name
+            recipe.ingredientTab = recipesData.ingredient
+            recipe.timeTab = recipesData.time
+            recipe.yieldTab = recipesData.yield
+            recipe.imageTab = recipesData.image
+            recipe.userIngredients = userIngredients
+        
         completionHandler(true)
-    }
+        }
    
     // MARK: IBAction
     @IBAction func didTapAddButton(_ sender: Any) {
@@ -109,12 +110,7 @@ extension SearchViewController {
                 return presentAlert(message: AlertMessage.init().programError)
             }
 
-            successVC.datas.nameTab = datas.nameTab
-            successVC.datas.ingredientTab = datas.ingredientTab
-            successVC.datas.timeTab = datas.timeTab
-            successVC.datas.yieldTab = datas.yieldTab
-            successVC.datas.imageTab = datas.imageTab
-            successVC.datas.userIngredients = datas.userIngredients
+            successVC.recipe = recipe
         }
     }
 }
