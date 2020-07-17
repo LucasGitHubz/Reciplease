@@ -13,9 +13,19 @@ class ListServiceTests: XCTestCase {
     func testWhenAddingNewValueToIngredientsByUserDefaultUtilisationThenIngredientsCountUp() {
         let ingredient = "Lemon"
         let ingredientsCount = ListService.ingredients.count
+        ListService.userDefaultKey = "ingredient"
 
         ListService.ingredients.append(ingredient)
 
         XCTAssertTrue(ListService.ingredients.count > ingredientsCount)
+    }
+
+    func testWhenAddingNewValueButTheUserDefaultKeyIsWrongThenAddingAnEmptyArray() {
+        let ingredient = "Lemon"
+        ListService.userDefaultKey = ""
+
+        ListService.ingredients.append(ingredient)
+
+        XCTAssertTrue(ListService.ingredients == [])
     }
 }
