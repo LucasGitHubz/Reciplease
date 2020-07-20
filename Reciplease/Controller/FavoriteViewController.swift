@@ -20,6 +20,7 @@ class FavoriteViewController: CustomViewController {
     // MARK: Lyfecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         toogleActivityIndicator(shown: false)
         checkIfFavoriteSectionIsNull()
         tableView.reloadData()
@@ -46,11 +47,7 @@ extension FavoriteViewController {
             guard let successVC = segue.destination as? DetailsViewController else {
                 return presentAlert(message: AlertMessage.init().programError)
             }
-            successVC.recipe.name = recipe.name
-            successVC.recipe.ingredients = recipe.ingredients
-            successVC.recipe.time = recipe.time
-            successVC.recipe.yield = recipe.yield
-            successVC.recipe.image = recipe.image
+            successVC.recipe = recipe
         }
     }
 }

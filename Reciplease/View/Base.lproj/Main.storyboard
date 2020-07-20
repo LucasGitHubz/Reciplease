@@ -521,28 +521,11 @@
                         <outlet property="starImage" destination="CAa-yd-9GC" id="MAE-Vl-fPb"/>
                         <outlet property="timeLabel" destination="crR-6Z-Lw6" id="jRv-dj-nMQ"/>
                         <outlet property="yieldLabel" destination="XGx-PL-RQf" id="Ula-mG-T0S"/>
-                        <segue destination="rdd-3p-25R" kind="show" identifier="segueToInstructions" id="MbP-8Z-m68"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9N-Qr-HN3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3385.507246376812" y="36.830357142857139"/>
-        </scene>
-        <!--Reciplease-->
-        <scene sceneID="lJy-Ci-bXK">
-            <objects>
-                <viewController id="rdd-3p-25R" customClass="InstructionsViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JUM-iB-FUn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="GEz-8e-Hkd"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Reciplease" id="e7t-fX-PQG"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1vw-6c-D4m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4197" y="38"/>
         </scene>
         <!--Favorite-->
         <scene sceneID="wx5-oM-Qqa">

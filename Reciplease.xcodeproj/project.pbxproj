@@ -34,7 +34,6 @@
 		C692371024A0CF8D00B11A98 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692370F24A0CF8D00B11A98 /* FavoriteViewController.swift */; };
 		C692371224A0D0D500B11A98 /* RecipListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692371124A0D0D500B11A98 /* RecipListViewController.swift */; };
 		C692371424A0D20A00B11A98 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692371324A0D20A00B11A98 /* DetailsViewController.swift */; };
-		C692371624A0D21700B11A98 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692371524A0D21700B11A98 /* InstructionsViewController.swift */; };
 		C6B8394E24AE5F7D000CF2E9 /* UINavigationBar+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8394D24AE5F7D000CF2E9 /* UINavigationBar+extension.swift */; };
 		C6BBEE5924C0773B000DEA03 /* URLSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BBEE5824C0773B000DEA03 /* URLSetter.swift */; };
 		C6D1195424B89D1600D00707 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6D1195324B89D1600D00707 /* CellView.xib */; };
@@ -100,7 +99,6 @@
 		C692370F24A0CF8D00B11A98 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		C692371124A0D0D500B11A98 /* RecipListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipListViewController.swift; sourceTree = "<group>"; };
 		C692371324A0D20A00B11A98 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
-		C692371524A0D21700B11A98 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		C6B8394D24AE5F7D000CF2E9 /* UINavigationBar+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+extension.swift"; sourceTree = "<group>"; };
 		C6BBEE5824C0773B000DEA03 /* URLSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSetter.swift; sourceTree = "<group>"; };
 		C6D1195324B89D1600D00707 /* CellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 				C692371124A0D0D500B11A98 /* RecipListViewController.swift */,
 				C692371324A0D20A00B11A98 /* DetailsViewController.swift */,
 				C692370F24A0CF8D00B11A98 /* FavoriteViewController.swift */,
-				C692371524A0D21700B11A98 /* InstructionsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -572,7 +569,6 @@
 				C69236DD24A0AE6E00B11A98 /* SceneDelegate.swift in Sources */,
 				C6F4FB7F24A5FB4D00891C6D /* UIViewController+extension.swift in Sources */,
 				C65A8EF624B717D700927062 /* Datas.swift in Sources */,
-				C692371624A0D21700B11A98 /* InstructionsViewController.swift in Sources */,
 				C60FCB7C24AF785100992482 /* RecipeData.swift in Sources */,
 				C692371424A0D20A00B11A98 /* DetailsViewController.swift in Sources */,
 				C6BBEE5924C0773B000DEA03 /* URLSetter.swift in Sources */,

@@ -28,11 +28,9 @@ class DetailsViewController: CustomViewController {
     // MARK: Lyfecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
         checkIfRecipeAlreadyAddedToFavorite(recipe.name)
-        recipeTitleLabel.text = recipe.name
-        timeLabel.text = "\(recipe.time) min"
-        yieldLabel.text = recipe.yield
-        recipeImageView.downloaded(from: recipe.image)
+        setPage(recipe)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +39,13 @@ class DetailsViewController: CustomViewController {
     }
     
     // MARK: Methods
+    private func setPage(_ object: Datas) {
+        recipeTitleLabel.text = object.name
+        timeLabel.text = "\(object.time) min"
+        yieldLabel.text = object.yield
+        recipeImageView.downloaded(from: object.image)
+    }
+
     private func toogleActivityIndicator(shown: Bool) {
             getDirectionButton.isHidden = !shown
             starImage.isHidden = !shown
