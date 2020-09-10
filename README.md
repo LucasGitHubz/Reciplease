@@ -1,8 +1,6 @@
 ## Reciplease App / Screenshots
 
-![Preview](https://github.com/LucasGitHubz/Reciplease/blob/master/Screenshots/first.png)
-![Preview](https://github.com/LucasGitHubz/Reciplease/blob/master/Screenshots/second.png)
-![Preview](https://github.com/LucasGitHubz/Reciplease/blob/master/Screenshots/third.png)
+![Preview](https://github.com/LucasGitHubz/Reciplease/blob/master/Screenshots/demo.png)
 
 ## Features 
 
